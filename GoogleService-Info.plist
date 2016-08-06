@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>782174428952-7iv532qrkr7ulbiqjlmc0jk5eslh8eet.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.782174428952-7iv532qrkr7ulbiqjlmc0jk5eslh8eet</string>
+	<key>API_KEY</key>
+	<string>AIzaSyATCdB0uJmRIoEtirQ8kVJD6m4fgFV16U4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>782174428952</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jw.Tiat</string>
+	<key>PROJECT_ID</key>
+	<string>tiat-ea6fd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tiat-ea6fd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:782174428952:ios:6ee650b90e684bcf</string>
+	<key>DATABASE_URL</key>
+	<string>https://tiat-ea6fd.firebaseio.com</string>
+</dict>
+</plist>

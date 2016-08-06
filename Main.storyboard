@@ -922,49 +922,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="띠앗" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N15-aX-TGV">
-                                <rect key="frame" x="161" y="94" width="52" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="띠앗" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N15-aX-TGV">
+                                <rect key="frame" x="161" y="97.5" width="52" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gis-TO-Fyg">
-                                <rect key="frame" x="84" y="291" width="207" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="go" secureTextEntry="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xea-GP-Ec1">
+                                <rect key="frame" x="134" y="403.5" width="106" height="30"/>
+                                <state key="normal" title="로그인"/>
                                 <connections>
-                                    <action selector="GoPressed:" destination="RX9-4s-cT7" eventType="primaryActionTriggered" id="7cm-0F-mWT"/>
+                                    <action selector="createAccount:" destination="RX9-4s-cT7" eventType="touchUpInside" id="1TH-By-aWN"/>
                                 </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-j4-69S">
-                                <rect key="frame" x="281" y="39" width="60" height="30"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-j4-69S">
+                                <rect key="frame" x="293" y="39" width="52" height="30"/>
                                 <state key="normal" title="회원가입"/>
                                 <connections>
                                     <segue destination="rfB-NY-2hX" kind="modal" id="51i-X6-otj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNo-JR-zBS">
-                                <rect key="frame" x="245" y="522" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                 <state key="normal" title="임시"/>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="modal" id="7aZ-Ny-xih"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-aJ-HV7">
-                                <rect key="frame" x="84" y="217" width="207" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-aJ-HV7">
+                                <rect key="frame" x="80" y="213.5" width="215" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <action selector="NextField:" destination="RX9-4s-cT7" eventType="primaryActionTriggered" id="w4y-ZA-lsP"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xea-GP-Ec1">
-                                <rect key="frame" x="138" y="407" width="98" height="30"/>
-                                <state key="normal" title="로그인"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gis-TO-Fyg">
+                                <rect key="frame" x="80" y="290" width="215" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="go" secureTextEntry="YES"/>
                                 <connections>
-                                    <action selector="createAccount:" destination="RX9-4s-cT7" eventType="touchUpInside" id="1TH-By-aWN"/>
+                                    <action selector="GoPressed:" destination="RX9-4s-cT7" eventType="primaryActionTriggered" id="7cm-0F-mWT"/>
                                 </connections>
-                            </button>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -982,6 +982,7 @@
                             <constraint firstItem="OYj-aJ-HV7" firstAttribute="centerX" secondItem="0jD-P9-m9P" secondAttribute="centerX" id="cfp-r4-201"/>
                             <constraint firstItem="N15-aX-TGV" firstAttribute="centerX" secondItem="0jD-P9-m9P" secondAttribute="centerX" id="d7T-Jg-dWj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gis-TO-Fyg" secondAttribute="trailing" constant="64" id="dyz-jn-kcY"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="N15-aX-TGV" secondAttribute="bottom" multiplier="20:4" id="leg-eo-8Ko"/>
                             <constraint firstItem="PLJ-x5-8w4" firstAttribute="top" secondItem="Xea-GP-Ec1" secondAttribute="bottom" multiplier="20:13" id="vu0-jn-K6G"/>
                         </constraints>
                     </view>
@@ -994,7 +995,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ce4-AB-K0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-935.5" y="-14.5"/>
+            <point key="canvasLocation" x="-905.5" y="10.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="CCS-NS-ILI">
@@ -1077,14 +1078,20 @@
                                     <action selector="selectProfilePhoto:" destination="rfB-NY-2hX" eventType="touchUpInside" id="Xs1-1R-pU5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6i-4B-Pnz">
-                                <rect key="frame" x="138" y="20" width="98" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6i-4B-Pnz">
+                                <rect key="frame" x="134" y="46" width="106" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k6i-4B-Pnz" firstAttribute="centerX" secondItem="dE5-bI-BBT" secondAttribute="centerX" id="8bw-7k-kps"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6i-4B-Pnz" secondAttribute="trailing" constant="119" id="JeO-xK-sbD"/>
+                            <constraint firstItem="97q-XR-14L" firstAttribute="top" secondItem="k6i-4B-Pnz" secondAttribute="bottom" constant="597" id="ahL-01-iaT"/>
+                            <constraint firstItem="k6i-4B-Pnz" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" constant="118" id="xoh-p5-qWo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="om9-P2-uFn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1151,6 +1158,6 @@
         <image name="status_green" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LdC-cF-Kyk"/>
+        <segue reference="086-PN-ffH"/>
     </inferredMetricsTieBreakers>
 </document>
