@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -400,14 +401,22 @@
                     <navigationItem key="navigationItem" title="현재 고민 중인 문제가 있나요?" id="qBi-nN-fvw">
                         <barButtonItem key="rightBarButtonItem" title="다음" id="QsB-aO-u5P">
                             <connections>
-                                <segue destination="4y1-ML-94C" kind="push" id="yTS-gQ-Uvg"/>
+                                <action selector="nextButtonTapped:" destination="IGr-j5-hln" id="hWK-g7-f7j"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="DetailField" destination="8ce-x6-Cdt" id="EXc-Kp-p4o"/>
                         <outlet property="TestButton" destination="b8y-OQ-cft" id="FsQ-bc-tVo"/>
+                        <outlet property="appearanceButton" destination="IQp-ST-NpD" id="bNX-TX-pGF"/>
+                        <outlet property="detail" destination="8ce-x6-Cdt" id="iPy-DH-LFo"/>
+                        <outlet property="dreamButton" destination="JRy-i9-Df2" id="beh-IO-dH4"/>
+                        <outlet property="exc" destination="BNx-tW-AHd" id="R4d-zs-h10"/>
+                        <outlet property="friendButton" destination="85q-2f-PV7" id="xko-hG-8NO"/>
+                        <outlet property="healthButton" destination="5jH-N3-1Gr" id="qB3-x3-0rV"/>
+                        <outlet property="loveButton" destination="gw1-Rt-kdF" id="mjo-J3-GKn"/>
+                        <outlet property="weightButton" destination="2pz-BS-4fa" id="0y4-mD-ANW"/>
+                        <segue destination="4y1-ML-94C" kind="push" identifier="toInput_2" id="Ta6-Hc-C21"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhk-cY-B5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1046,10 +1055,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
-                                <rect key="frame" x="20" y="86" width="70" height="70"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
                                 <rect key="frame" x="116" y="86" width="239" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -1079,18 +1085,30 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6i-4B-Pnz">
-                                <rect key="frame" x="134" y="46" width="106" height="24"/>
+                                <rect key="frame" x="134" y="29.5" width="106" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
+                                <rect key="frame" x="20" y="86" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gwm-AQ-FaV" secondAttribute="height" multiplier="1:1" id="HuF-jy-Zcf"/>
+                                    <constraint firstAttribute="width" constant="70" id="Mdb-if-u80"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="k6i-4B-Pnz" firstAttribute="centerX" secondItem="dE5-bI-BBT" secondAttribute="centerX" id="8bw-7k-kps"/>
+                            <constraint firstItem="gwm-AQ-FaV" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" id="D4c-0B-A6n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k6i-4B-Pnz" secondAttribute="trailing" constant="119" id="JeO-xK-sbD"/>
-                            <constraint firstItem="97q-XR-14L" firstAttribute="top" secondItem="k6i-4B-Pnz" secondAttribute="bottom" constant="597" id="ahL-01-iaT"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="SN4-VQ-luV" secondAttribute="bottom" constant="551" id="SEm-Je-CCD"/>
+                            <constraint firstItem="SN4-VQ-luV" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" constant="96" id="Yb1-xs-1WL"/>
+                            <constraint firstItem="97q-XR-14L" firstAttribute="top" secondItem="k6i-4B-Pnz" secondAttribute="bottom" multiplier="30:2.4" id="ahL-01-iaT"/>
+                            <constraint firstItem="SN4-VQ-luV" firstAttribute="centerX" secondItem="dE5-bI-BBT" secondAttribute="centerX" id="fAv-fv-9zv"/>
                             <constraint firstItem="k6i-4B-Pnz" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" constant="118" id="xoh-p5-qWo"/>
+                            <constraint firstItem="gwm-AQ-FaV" firstAttribute="top" secondItem="4jz-NC-SGc" secondAttribute="bottom" multiplier="30: 7" id="z6O-k5-292"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="om9-P2-uFn"/>

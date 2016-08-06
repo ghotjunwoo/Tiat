@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import Firebase
 import DLRadioButton
 
 class ProblemInputViewController: UIViewController {
 
-    @IBOutlet weak var DetailField: UITextField!
     @IBOutlet var TestButton: DLRadioButton!
+    @IBOutlet var loveButton: DLRadioButton!
+    @IBOutlet var healthButton: DLRadioButton!
+    @IBOutlet var appearanceButton: DLRadioButton!
+    @IBOutlet var dreamButton: DLRadioButton!
+    @IBOutlet var weightButton: DLRadioButton!
+    @IBOutlet var friendButton: DLRadioButton!
+    @IBOutlet var exc: DLRadioButton!
+    @IBOutlet var detail: UITextField!
+    
+    let user = FIRAuth.auth()?.currentUser
+    var currentProblemValue = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +35,48 @@ class ProblemInputViewController: UIViewController {
     }
     @IBAction func markButtonSelected(radioButton : DLRadioButton) {
         if (radioButton.multipleSelectionEnabled) {
+            let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
+
+            let testRef = userRef.child("currentdata/feeling/problem/test")
+            let loveRef = userRef.child("currentdata/feeling/problem/love")
+            let healthRef = userRef.child("currentdata/feeling/problem/health")
+            let appearanceRef = userRef.child("currentdata/feeling/problem/appearance")
+            let dreamRef = userRef.child("currentdata/feeling/problem/dream")
+            let weightRef = userRef.child("currentdata/feeling/problem/weight")
+            let friendRef = userRef.child("currentdata/feeling/problem/friend")
+
             for button in radioButton.selectedButtons() {
-                print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
+                print(String(format: "%@ is selected.\n", button.titleLabel!.text!))
+                switch button.titleLabel!.text! {
+                case "시험":
+                    testRef.setValue(true)
+                case "건강":
+                    healthRef.setValue(true)
+                case "외모":
+                    appearanceRef.setValue(true)
+                case "장래":
+                    dreamRef.setValue(true)
+                case "몸무게":
+                    weightRef.setValue(true)
+                case "친구":
+                    friendRef.setValue(true)
+                case "이성":
+                    loveRef.setValue(true)
+                default:
+                    break
+                }
+                FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling/problem/detail").setValue(detail.text!)
             }
         } else {
+            
             print(String(format: "%@ is selected.\n", radioButton.selectedButton()!.titleLabel!.text!));
         }
     }
     
+    @IBAction func nextButtonTapped(sender: AnyObject) {
+        print(detail.text!)
+        FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/detail").setValue(detail.text!)
+        performSegueWithIdentifier("toInput_2", sender: self)
+    }
     
 }
