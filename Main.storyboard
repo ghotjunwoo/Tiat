@@ -936,13 +936,6 @@
                                     <action selector="GoPressed:" destination="RX9-4s-cT7" eventType="primaryActionTriggered" id="7cm-0F-mWT"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xea-GP-Ec1">
-                                <rect key="frame" x="138" y="407" width="98" height="30"/>
-                                <state key="normal" title="로그인"/>
-                                <connections>
-                                    <action selector="createAccount:" destination="RX9-4s-cT7" eventType="touchUpInside" id="1TH-By-aWN"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-j4-69S">
                                 <rect key="frame" x="281" y="39" width="60" height="30"/>
                                 <state key="normal" title="회원가입"/>
@@ -965,6 +958,13 @@
                                     <action selector="NextField:" destination="RX9-4s-cT7" eventType="primaryActionTriggered" id="w4y-ZA-lsP"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xea-GP-Ec1">
+                                <rect key="frame" x="138" y="407" width="98" height="30"/>
+                                <state key="normal" title="로그인"/>
+                                <connections>
+                                    <action selector="createAccount:" destination="RX9-4s-cT7" eventType="touchUpInside" id="1TH-By-aWN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -982,7 +982,7 @@
                             <constraint firstItem="OYj-aJ-HV7" firstAttribute="centerX" secondItem="0jD-P9-m9P" secondAttribute="centerX" id="cfp-r4-201"/>
                             <constraint firstItem="N15-aX-TGV" firstAttribute="centerX" secondItem="0jD-P9-m9P" secondAttribute="centerX" id="d7T-Jg-dWj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gis-TO-Fyg" secondAttribute="trailing" constant="64" id="dyz-jn-kcY"/>
-                            <constraint firstItem="PLJ-x5-8w4" firstAttribute="top" secondItem="Xea-GP-Ec1" secondAttribute="bottom" constant="230" id="vu0-jn-K6G"/>
+                            <constraint firstItem="PLJ-x5-8w4" firstAttribute="top" secondItem="Xea-GP-Ec1" secondAttribute="bottom" multiplier="20:13" id="vu0-jn-K6G"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
