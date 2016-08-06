@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FA6F55238D2BC35915AECD626884F1D /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 086DE54F4A1C8A54D3D8FEF507465D34 /* DLRadioButton.m */; };
+		415EC68C9BB019000ADA9F6E64BE3FA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		5F5B910D306CC0849640D0372E2ADB43 /* DLRadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E24C589C2210EFC2F626C941C2C908F /* DLRadioButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		947D28F5F00CCB524EE4633F812D9650 /* Pods-Tiat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 685C058A65051EAAD4B31D8D6E3ADEC0 /* Pods-Tiat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A028112A4C3A43DAA9BFB281C6AC8ACB /* DLRadioButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F75A6295E2809292D3FC75E8AE4DC23F /* DLRadioButton-dummy.m */; };
+		BE6738C0C0FD368B7299C7037B773694 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		C7AB837F3200D41BF676DC49D222EBAC /* DLRadioButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B97263406A966300BC74B9479AB4B05 /* DLRadioButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAC5EB9A9D2DFB32CBCEA935FDD133D3 /* Pods-Tiat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED21D359DEF005B5EF38AA61AE7D609 /* Pods-Tiat-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E235CE9E9BA4408AD53CD2B2D124495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3990E3EAC160D4E4F89177D966FC1E9;
+			remoteInfo = DLRadioButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06C1DBAF02F351B2EE8DD5D68E61AC83 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		081ECEA5E02FAAB2E60F7FB2FF944DD6 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		086DE54F4A1C8A54D3D8FEF507465D34 /* DLRadioButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DLRadioButton.m; path = DLRadioButton/DLRadioButton.m; sourceTree = "<group>"; };
+		087F20D4D981FB7E1A7D5D345D62398B /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		17A788B615E12E7CDE457227BE7D75C3 /* Pods-Tiat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tiat.debug.xcconfig"; sourceTree = "<group>"; };
+		19DBB9747F12CD7FE749122E8FDFB6F1 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		29E3DED36EB7F8CFB5A72BC249C687FB /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		3EE730382E2455131A3C75267F6495CC /* Pods-Tiat-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tiat-resources.sh"; sourceTree = "<group>"; };
+		410C18F9702ED2C16578D59130D6BD0A /* DLRadioButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLRadioButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43358CCB6E4F01E031C2CC1BEF004268 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
+		495319235CBFC17392AF1D8AF7D6F170 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		4B97263406A966300BC74B9479AB4B05 /* DLRadioButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-umbrella.h"; sourceTree = "<group>"; };
+		4ED21D359DEF005B5EF38AA61AE7D609 /* Pods-Tiat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tiat-dummy.m"; sourceTree = "<group>"; };
+		55E4A323D37FBB5D3CF52C03A890B9C5 /* Pods-Tiat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tiat-frameworks.sh"; sourceTree = "<group>"; };
+		685C058A65051EAAD4B31D8D6E3ADEC0 /* Pods-Tiat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tiat-umbrella.h"; sourceTree = "<group>"; };
+		69F5C7471FAAA9D03AEE5FC84FFAC774 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		6A76E27238B94FCC4CE96DB4300B8AC0 /* Pods-Tiat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tiat-acknowledgements.plist"; sourceTree = "<group>"; };
+		8E24C589C2210EFC2F626C941C2C908F /* DLRadioButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DLRadioButton.h; path = DLRadioButton/DLRadioButton.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9514F089CF2F8E5ECC2E4AB15FFFFCE4 /* DLRadioButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLRadioButton.xcconfig; sourceTree = "<group>"; };
+		971398E6A5A237DD35E05918A7723AD8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0494CE4A0DBF1C8D9CF3E78FB41AE3A /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		A40E109D9BC2758E68E6200C7AE1CD33 /* Pods-Tiat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tiat-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AAD3036446C7D6C69E4DA35E2B2810F1 /* Pods_Tiat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9A3C6977B13B74F3F635B080C9B62E4 /* DLRadioButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DLRadioButton.modulemap; sourceTree = "<group>"; };
+		C901F187FCCE110B88A8B22F9D600A5B /* Pods-Tiat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tiat.modulemap"; sourceTree = "<group>"; };
+		CD5724AAE807757679F42FB557348A1F /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D06C1366FC250B35A63FA8490CBCC60C /* GoogleParsingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleParsingUtilities.framework; path = Frameworks/GoogleParsingUtilities.framework; sourceTree = "<group>"; };
+		D33580014D8133A89D61BF995E14858D /* DLRadioButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLRadioButton-prefix.pch"; sourceTree = "<group>"; };
+		E7C4D43E7213DAA59548D8D3321F53B2 /* Pods-Tiat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tiat.release.xcconfig"; sourceTree = "<group>"; };
+		F75A6295E2809292D3FC75E8AE4DC23F /* DLRadioButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DLRadioButton-dummy.m"; sourceTree = "<group>"; };
+		FFB39238D37FA803AE0B142CBAD3DC51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19FBA5C521CBA02DBACDE21E48D00CB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE6738C0C0FD368B7299C7037B773694 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E622E150CA271619A58D4F2AAD6CE88A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				415EC68C9BB019000ADA9F6E64BE3FA7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F83CFF8B3ADBE5D2F450052DBFE267 /* GoogleParsingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				DBE795BDF34992A32D18434A518B70AE /* Frameworks */,
+			);
+			path = GoogleParsingUtilities;
+			sourceTree = "<group>";
+		};
+		05F25FE468F0B15A5ED8CC3F29B1138B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				410C18F9702ED2C16578D59130D6BD0A /* DLRadioButton.framework */,
+				AAD3036446C7D6C69E4DA35E2B2810F1 /* Pods_Tiat.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0BD6964923AC01AAD052440FA1BEE7B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E1DE1DC8E3D6E1E08F1475B28E57D /* DLRadioButton */,
+				912518F72CEC22FEC75C623D7FFD340F /* Firebase */,
+				5C2F7BB1AEE8246B8C05A5E810CA53BF /* FirebaseAnalytics */,
+				511549ED047A25DD5D0AE79A43EB2C20 /* FirebaseAuth */,
+				8A092CF8EB4B3D7E2FBA175F67D96C45 /* FirebaseDatabase */,
+				9830A6A4001F308EEEC91A1197F4E25F /* FirebaseInstanceID */,
+				7255DFE57F93B61D1207F10A67B18B60 /* GoogleInterchangeUtilities */,
+				621AACCE64A4BA4027638A9896456A37 /* GoogleNetworkingUtilities */,
+				01F83CFF8B3ADBE5D2F450052DBFE267 /* GoogleParsingUtilities */,
+				40DF92D3B65FAA2153C40A2AF29AD0C3 /* GoogleSymbolUtilities */,
+				24FFB2976606D3499115267CB01CF9FE /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		110BA0E0C3D6E930F0CB21732AE569B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29E3DED36EB7F8CFB5A72BC249C687FB /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1299CFB4BA740F024FA58A9DA26B1A8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0494CE4A0DBF1C8D9CF3E78FB41AE3A /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17317C5D41F05FA029A01E6BF9D1C68A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9A3C6977B13B74F3F635B080C9B62E4 /* DLRadioButton.modulemap */,
+				9514F089CF2F8E5ECC2E4AB15FFFFCE4 /* DLRadioButton.xcconfig */,
+				F75A6295E2809292D3FC75E8AE4DC23F /* DLRadioButton-dummy.m */,
+				D33580014D8133A89D61BF995E14858D /* DLRadioButton-prefix.pch */,
+				4B97263406A966300BC74B9479AB4B05 /* DLRadioButton-umbrella.h */,
+				FFB39238D37FA803AE0B142CBAD3DC51 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DLRadioButton";
+			sourceTree = "<group>";
+		};
+		24FFB2976606D3499115267CB01CF9FE /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				110BA0E0C3D6E930F0CB21732AE569B9 /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		2E6E1DE1DC8E3D6E1E08F1475B28E57D /* DLRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				8E24C589C2210EFC2F626C941C2C908F /* DLRadioButton.h */,
+				086DE54F4A1C8A54D3D8FEF507465D34 /* DLRadioButton.m */,
+				17317C5D41F05FA029A01E6BF9D1C68A /* Support Files */,
+			);
+			path = DLRadioButton;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		40DF92D3B65FAA2153C40A2AF29AD0C3 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				B5D09B7E9BAD02FE4FADFA9101390C6F /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		511549ED047A25DD5D0AE79A43EB2C20 /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				9F6C95F1288E3B61F19BE65ECE8B78AC /* Frameworks */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		5C2F7BB1AEE8246B8C05A5E810CA53BF /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				E1AA6FC599ED6404FAB76C6094DB862A /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		61CFB4179E955E2AD2BC0AAF6D7700F8 /* Pods-Tiat */ = {
+			isa = PBXGroup;
+			children = (
+				971398E6A5A237DD35E05918A7723AD8 /* Info.plist */,
+				C901F187FCCE110B88A8B22F9D600A5B /* Pods-Tiat.modulemap */,
+				A40E109D9BC2758E68E6200C7AE1CD33 /* Pods-Tiat-acknowledgements.markdown */,
+				6A76E27238B94FCC4CE96DB4300B8AC0 /* Pods-Tiat-acknowledgements.plist */,
+				4ED21D359DEF005B5EF38AA61AE7D609 /* Pods-Tiat-dummy.m */,
+				55E4A323D37FBB5D3CF52C03A890B9C5 /* Pods-Tiat-frameworks.sh */,
+				3EE730382E2455131A3C75267F6495CC /* Pods-Tiat-resources.sh */,
+				685C058A65051EAAD4B31D8D6E3ADEC0 /* Pods-Tiat-umbrella.h */,
+				17A788B615E12E7CDE457227BE7D75C3 /* Pods-Tiat.debug.xcconfig */,
+				E7C4D43E7213DAA59548D8D3321F53B2 /* Pods-Tiat.release.xcconfig */,
+			);
+			name = "Pods-Tiat";
+			path = "Target Support Files/Pods-Tiat";
+			sourceTree = "<group>";
+		};
+		621AACCE64A4BA4027638A9896456A37 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				B1DE61D3936C88097EC74FD9CB195DC7 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		637DE5A49B581E2FB0C1261AB133A884 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				61CFB4179E955E2AD2BC0AAF6D7700F8 /* Pods-Tiat */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7255DFE57F93B61D1207F10A67B18B60 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				CC78AC3DD3257098A0116CEC6B868B98 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				0BD6964923AC01AAD052440FA1BEE7B5 /* Pods */,
+				05F25FE468F0B15A5ED8CC3F29B1138B /* Products */,
+				637DE5A49B581E2FB0C1261AB133A884 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8A092CF8EB4B3D7E2FBA175F67D96C45 /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				D07D342A13F28A26D322EC699EACF37A /* Frameworks */,
+			);
+			path = FirebaseDatabase;
+			sourceTree = "<group>";
+		};
+		912518F72CEC22FEC75C623D7FFD340F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				EF8AE9D869774572E6D532BE193B0806 /* Analytics */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		9830A6A4001F308EEEC91A1197F4E25F /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				495319235CBFC17392AF1D8AF7D6F170 /* FIRInstanceID.h */,
+				1299CFB4BA740F024FA58A9DA26B1A8D /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		9F6C95F1288E3B61F19BE65ECE8B78AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69F5C7471FAAA9D03AEE5FC84FFAC774 /* FirebaseAuth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1DE61D3936C88097EC74FD9CB195DC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD5724AAE807757679F42FB557348A1F /* GoogleNetworkingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5D09B7E9BAD02FE4FADFA9101390C6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19DBB9747F12CD7FE749122E8FDFB6F1 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC78AC3DD3257098A0116CEC6B868B98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				087F20D4D981FB7E1A7D5D345D62398B /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D07D342A13F28A26D322EC699EACF37A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06C1DBAF02F351B2EE8DD5D68E61AC83 /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBE795BDF34992A32D18434A518B70AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D06C1366FC250B35A63FA8490CBCC60C /* GoogleParsingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1AA6FC599ED6404FAB76C6094DB862A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				081ECEA5E02FAAB2E60F7FB2FF944DD6 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF8AE9D869774572E6D532BE193B0806 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				43358CCB6E4F01E031C2CC1BEF004268 /* Firebase.h */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		51FE3DBC70919C3B31C5FEEF707F97DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7AB837F3200D41BF676DC49D222EBAC /* DLRadioButton-umbrella.h in Headers */,
+				5F5B910D306CC0849640D0372E2ADB43 /* DLRadioButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC3E3A2FCB153F31CAC9B2B0E942B001 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				947D28F5F00CCB524EE4633F812D9650 /* Pods-Tiat-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		40BF01046F4F5ED863657BFB616AE35E /* Pods-Tiat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 079E31633993731F722682DA87D61012 /* Build configuration list for PBXNativeTarget "Pods-Tiat" */;
+			buildPhases = (
+				86FC1CFFD9CEAC03091E43A111C77D6D /* Sources */,
+				E622E150CA271619A58D4F2AAD6CE88A /* Frameworks */,
+				DC3E3A2FCB153F31CAC9B2B0E942B001 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDD2676DE6C83557AD1909A36F814436 /* PBXTargetDependency */,
+			);
+			name = "Pods-Tiat";
+			productName = "Pods-Tiat";
+			productReference = AAD3036446C7D6C69E4DA35E2B2810F1 /* Pods_Tiat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F3990E3EAC160D4E4F89177D966FC1E9 /* DLRadioButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 640D1DE3DAFB56E14FADAB35766A3F70 /* Build configuration list for PBXNativeTarget "DLRadioButton" */;
+			buildPhases = (
+				20D63686573496E9282895D377C9ECE3 /* Sources */,
+				19FBA5C521CBA02DBACDE21E48D00CB3 /* Frameworks */,
+				51FE3DBC70919C3B31C5FEEF707F97DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DLRadioButton;
+			productName = DLRadioButton;
+			productReference = 410C18F9702ED2C16578D59130D6BD0A /* DLRadioButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 05F25FE468F0B15A5ED8CC3F29B1138B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3990E3EAC160D4E4F89177D966FC1E9 /* DLRadioButton */,
+				40BF01046F4F5ED863657BFB616AE35E /* Pods-Tiat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20D63686573496E9282895D377C9ECE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A028112A4C3A43DAA9BFB281C6AC8ACB /* DLRadioButton-dummy.m in Sources */,
+				1FA6F55238D2BC35915AECD626884F1D /* DLRadioButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86FC1CFFD9CEAC03091E43A111C77D6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAC5EB9A9D2DFB32CBCEA935FDD133D3 /* Pods-Tiat-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDD2676DE6C83557AD1909A36F814436 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DLRadioButton;
+			target = F3990E3EAC160D4E4F89177D966FC1E9 /* DLRadioButton */;
+			targetProxy = 2E235CE9E9BA4408AD53CD2B2D124495 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		034014829C1E4434983CF3A690C12017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		0D5490CE1D58CCDA984E52CCF6B5DBBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7C4D43E7213DAA59548D8D3321F53B2 /* Pods-Tiat.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tiat/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tiat/Pods-Tiat.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tiat;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		31F8ABE817A21C1EF374E81A4E8EFDA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9514F089CF2F8E5ECC2E4AB15FFFFCE4 /* DLRadioButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4A5A86E10223603261476AED5C9D02BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17A788B615E12E7CDE457227BE7D75C3 /* Pods-Tiat.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Tiat/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tiat/Pods-Tiat.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Tiat;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B91A46568521B4B69EA0ADCEFB96FB8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9514F089CF2F8E5ECC2E4AB15FFFFCE4 /* DLRadioButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DLRadioButton/DLRadioButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DLRadioButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DLRadioButton/DLRadioButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DLRadioButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C7E474A03CAE21F1CB6046E7344C59BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		079E31633993731F722682DA87D61012 /* Build configuration list for PBXNativeTarget "Pods-Tiat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A5A86E10223603261476AED5C9D02BC /* Debug */,
+				0D5490CE1D58CCDA984E52CCF6B5DBBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034014829C1E4434983CF3A690C12017 /* Debug */,
+				C7E474A03CAE21F1CB6046E7344C59BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		640D1DE3DAFB56E14FADAB35766A3F70 /* Build configuration list for PBXNativeTarget "DLRadioButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B91A46568521B4B69EA0ADCEFB96FB8C /* Debug */,
+				31F8ABE817A21C1EF374E81A4E8EFDA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
