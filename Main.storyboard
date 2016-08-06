@@ -426,7 +426,7 @@
         <!--Input2-->
         <scene sceneID="Eao-QK-5qX">
             <objects>
-                <viewController id="4y1-ML-94C" userLabel="Input2" sceneMemberID="viewController">
+                <viewController id="4y1-ML-94C" userLabel="Input2" customClass="FeelingInputViewController" customModule="Tiat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zaw-Ud-BNM"/>
                         <viewControllerLayoutGuide type="bottom" id="vS3-QQ-SNc"/>
@@ -447,9 +447,12 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Grl-Hx-vSF" userLabel="Horizontal Slider_기쁨">
                                         <rect key="frame" x="20" y="109" width="248" height="31"/>
                                         <color key="tintColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="happyValueChanged:" destination="4y1-ML-94C" eventType="valueChanged" id="wiU-O2-aP6"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVn-ZC-afA" userLabel="기쁨지수">
-                                        <rect key="frame" x="274" y="111" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVn-ZC-afA" userLabel="기쁨지수">
+                                        <rect key="frame" x="280" y="111" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -461,8 +464,8 @@
                                         <color key="textColor" red="0.0" green="0.40000000000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG6-hR-daz" userLabel="슬픔지수">
-                                        <rect key="frame" x="274" y="181" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG6-hR-daz" userLabel="슬픔지수">
+                                        <rect key="frame" x="280" y="181" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -476,9 +479,12 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Ag-Fg-KY2" userLabel="Horizontal Slider_외로움">
                                         <rect key="frame" x="20" y="252" width="248" height="31"/>
                                         <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="lonleyValueChanged:" destination="4y1-ML-94C" eventType="valueChanged" id="s0L-BE-E3Z"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9i-7Q-1Of" userLabel="외로움지수">
-                                        <rect key="frame" x="274" y="252" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9i-7Q-1Of" userLabel="외로움지수">
+                                        <rect key="frame" x="280" y="252" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -492,9 +498,12 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="WPh-S7-VUy" userLabel="Horizontal Slider_분노">
                                         <rect key="frame" x="20" y="321" width="248" height="31"/>
                                         <color key="tintColor" red="0.40000000000000002" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="angerValueChanged:" destination="4y1-ML-94C" eventType="valueChanged" id="Ymx-SE-cqX"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyH-dM-Emj" userLabel="분노지수">
-                                        <rect key="frame" x="274" y="320" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyH-dM-Emj" userLabel="분노지수">
+                                        <rect key="frame" x="280" y="320" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -508,9 +517,12 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="wJG-A9-KAt" userLabel="Horizontal Slider_사랑">
                                         <rect key="frame" x="20" y="390" width="248" height="31"/>
                                         <color key="tintColor" red="1" green="0.0" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="loveValueChanged:" destination="4y1-ML-94C" eventType="valueChanged" id="hs6-Mr-fVl"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-oJ-uvY" userLabel="사랑지수">
-                                        <rect key="frame" x="274" y="388" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-oJ-uvY" userLabel="사랑지수">
+                                        <rect key="frame" x="280" y="388" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -521,12 +533,8 @@
                                         <color key="textColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="idJ-bA-KSr" userLabel="Horizontal Slider_불안">
-                                        <rect key="frame" x="20" y="465" width="248" height="31"/>
-                                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYo-qg-ESH" userLabel="불안지수">
-                                        <rect key="frame" x="274" y="462" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYo-qg-ESH" userLabel="불안지수">
+                                        <rect key="frame" x="280" y="462" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -554,6 +562,16 @@
                                     </textField>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="kW0-L5-kHl" userLabel="Horizontal Slider_슬픔">
                                         <rect key="frame" x="20" y="177" width="248" height="31"/>
+                                        <connections>
+                                            <action selector="sadValueChanged:" destination="4y1-ML-94C" eventType="valueChanged" id="Rse-es-QAs"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="idJ-bA-KSr" userLabel="Horizontal Slider_불안">
+                                        <rect key="frame" x="20" y="462" width="248" height="31"/>
+                                        <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="unrestValueChange:" destination="4y1-ML-94C" eventType="valueChanged" id="B0t-bf-adF"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -564,11 +582,21 @@
                     <navigationItem key="navigationItem" title="기분 상태를 입력해 주세요" id="NF1-yS-DMC">
                         <barButtonItem key="rightBarButtonItem" title="다음" id="eAJ-xt-UDp">
                             <connections>
-                                <segue destination="Fze-nf-6PK" kind="push" id="Kd3-68-xdv"/>
+                                <action selector="nextButtonTapped:" destination="4y1-ML-94C" id="wzS-Mb-HUS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="angerValueLabel" destination="FyH-dM-Emj" id="ehM-hT-G6q"/>
+                        <outlet property="feelingDetailField" destination="Nnq-qU-OVf" id="zT5-Hc-ZF7"/>
+                        <outlet property="happyValueLabel" destination="rVn-ZC-afA" id="ngJ-ZM-ahp"/>
+                        <outlet property="lonleyValueLabel" destination="i9i-7Q-1Of" id="2jn-ka-utg"/>
+                        <outlet property="loveValueLabel" destination="3j4-oJ-uvY" id="uCO-7L-3xS"/>
+                        <outlet property="sadValueLabel" destination="DG6-hR-daz" id="vKp-o3-fkC"/>
+                        <outlet property="unrestValueLabel" destination="qYo-qg-ESH" id="J4X-k9-vxE"/>
+                        <segue destination="Fze-nf-6PK" kind="push" identifier="toMainScreen_3" id="stg-VO-lHQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV9-ny-cV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -733,7 +761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnL-fd-LbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224" y="1026"/>
+            <point key="canvasLocation" x="36.5" y="889.5"/>
         </scene>
         <!--친구 목록-->
         <scene sceneID="wg7-f3-ORb">
@@ -751,7 +779,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="82" id="o8S-g5-dzy" customClass="FriendsTableViewCell" customModule="Tiat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="friendsCell" rowHeight="82" id="o8S-g5-dzy" customClass="FriendsTableViewCell" customModule="Tiat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8S-g5-dzy" id="pGZ-qX-r26">
@@ -1055,8 +1083,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
-                                <rect key="frame" x="116" y="86" width="239" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
+                                <rect key="frame" x="112" y="86" width="151" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <connections>
@@ -1085,13 +1113,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6i-4B-Pnz">
-                                <rect key="frame" x="134" y="29.5" width="106" height="24"/>
+                                <rect key="frame" x="134" y="29" width="106" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
-                                <rect key="frame" x="20" y="86" width="70" height="70"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
+                                <rect key="frame" x="16" y="86" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gwm-AQ-FaV" secondAttribute="height" multiplier="1:1" id="HuF-jy-Zcf"/>
                                     <constraint firstAttribute="width" constant="70" id="Mdb-if-u80"/>
@@ -1104,9 +1132,9 @@
                             <constraint firstItem="gwm-AQ-FaV" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" id="D4c-0B-A6n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="k6i-4B-Pnz" secondAttribute="trailing" constant="119" id="JeO-xK-sbD"/>
                             <constraint firstAttribute="bottomMargin" secondItem="SN4-VQ-luV" secondAttribute="bottom" constant="551" id="SEm-Je-CCD"/>
-                            <constraint firstItem="SN4-VQ-luV" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" constant="96" id="Yb1-xs-1WL"/>
                             <constraint firstItem="97q-XR-14L" firstAttribute="top" secondItem="k6i-4B-Pnz" secondAttribute="bottom" multiplier="30:2.4" id="ahL-01-iaT"/>
                             <constraint firstItem="SN4-VQ-luV" firstAttribute="centerX" secondItem="dE5-bI-BBT" secondAttribute="centerX" id="fAv-fv-9zv"/>
+                            <constraint firstItem="SN4-VQ-luV" firstAttribute="leading" secondItem="gwm-AQ-FaV" secondAttribute="trailing" constant="26" id="pXP-1e-4gP"/>
                             <constraint firstItem="k6i-4B-Pnz" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" constant="118" id="xoh-p5-qWo"/>
                             <constraint firstItem="gwm-AQ-FaV" firstAttribute="top" secondItem="4jz-NC-SGc" secondAttribute="bottom" multiplier="30: 7" id="z6O-k5-292"/>
                         </constraints>

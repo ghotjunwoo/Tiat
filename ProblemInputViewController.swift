@@ -37,13 +37,22 @@ class ProblemInputViewController: UIViewController {
         if (radioButton.multipleSelectionEnabled) {
             let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
 
-            let testRef = userRef.child("currentdata/feeling/problem/test")
-            let loveRef = userRef.child("currentdata/feeling/problem/love")
-            let healthRef = userRef.child("currentdata/feeling/problem/health")
-            let appearanceRef = userRef.child("currentdata/feeling/problem/appearance")
-            let dreamRef = userRef.child("currentdata/feeling/problem/dream")
-            let weightRef = userRef.child("currentdata/feeling/problem/weight")
-            let friendRef = userRef.child("currentdata/feeling/problem/friend")
+            let testRef = userRef.child("currentdata/problem/test")
+            let loveRef = userRef.child("currentdata/problem/love")
+            let healthRef = userRef.child("currentdata/problem/health")
+            let appearanceRef = userRef.child("currentdata/problem/appearance")
+            let dreamRef = userRef.child("currentdata/problem/dream")
+            let weightRef = userRef.child("currentdata/problem/weight")
+            let friendRef = userRef.child("currentdata/problem/friend")
+            
+            testRef.setValue(false)
+            loveRef.setValue(false)
+            healthRef.setValue(false)
+            appearanceRef.setValue(false)
+            dreamRef.setValue(false)
+            weightRef.setValue(false)
+            friendRef.setValue(false)
+
 
             for button in radioButton.selectedButtons() {
                 print(String(format: "%@ is selected.\n", button.titleLabel!.text!))
@@ -65,7 +74,6 @@ class ProblemInputViewController: UIViewController {
                 default:
                     break
                 }
-                FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling/problem/detail").setValue(detail.text!)
             }
         } else {
             

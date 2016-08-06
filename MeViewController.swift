@@ -16,9 +16,7 @@ class FirstViewController: UIViewController {
     @IBOutlet var birthDayLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(animated: Bool) {
         if let user = FIRAuth.auth()?.currentUser {
             let userRef = FIRDatabase.database().reference().child("users/\(user.uid)")
             
@@ -38,6 +36,12 @@ class FirstViewController: UIViewController {
             print("Sucessfully Signed in")
             
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
