@@ -75,12 +75,9 @@
                                         <color key="textColor" red="1" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTj-md-xbE" userLabel="GraphPlaceHolder_Emotion">
-                                        <rect key="frame" x="8" y="51" width="133" height="133"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="특수상태" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i55-WZ-IbE">
                                         <rect key="frame" x="158" y="54" width="177" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -96,18 +93,12 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상태" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdc-0G-T0K" userLabel="긍정상태_Emotion">
                                         <rect key="frame" x="158" y="90" width="177" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상태" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCg-iO-gaA" userLabel="긍정상태_Emotion">
                                         <rect key="frame" x="158" y="340" width="177" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="문제" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWf-Is-6Y0" userLabel="긍정상태_Emotion">
-                                        <rect key="frame" x="158" y="145" width="177" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -123,10 +114,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="birthDayLabel" destination="z38-5a-WXC" id="a3F-ob-Uo3"/>
+                        <outlet property="conditionLabel" destination="i55-WZ-IbE" id="5kv-8Z-Q2J"/>
                         <outlet property="genderLabel" destination="UyW-Ke-Amj" id="qrS-Np-n1W"/>
                         <outlet property="nameLabel" destination="i6V-dL-k1z" id="GOR-ZZ-rAw"/>
                         <outlet property="pointLabel" destination="vLX-JW-u0Q" id="peb-fT-icd"/>
                         <outlet property="profileImageView" destination="mtI-S3-Fxy" id="Zcf-YK-ZUy"/>
+                        <outlet property="statusLabel" destination="jdc-0G-T0K" id="kko-nQ-pxv"/>
                         <segue destination="RX9-4s-cT7" kind="modal" identifier="logoutSegue" id="EY5-xR-6Lf"/>
                     </connections>
                 </viewController>
@@ -414,6 +407,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="TestButton" destination="b8y-OQ-cft" id="FsQ-bc-tVo"/>
@@ -601,6 +596,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="angerValueLabel" destination="FyH-dM-Emj" id="ehM-hT-G6q"/>
@@ -778,7 +775,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0Zt-ib-cly"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ykN-ad-SzB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -825,7 +822,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="friendsCell" rowHeight="82" id="o8S-g5-dzy" customClass="FriendsTableViewCell" customModule="Tiat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="82"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8S-g5-dzy" id="pGZ-qX-r26">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="81.5"/>
@@ -1184,7 +1181,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RcD-jk-3Fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271.5" y="-310.5"/>
+            <point key="canvasLocation" x="1275" y="-222"/>
         </scene>
     </scenes>
     <resources>
@@ -1197,6 +1194,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4TL-Yx-n46"/>
-        <segue reference="j5N-4W-rBg"/>
+        <segue reference="EY5-xR-6Lf"/>
     </inferredMetricsTieBreakers>
 </document>

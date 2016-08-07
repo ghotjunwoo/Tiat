@@ -29,9 +29,7 @@ class ProblemInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TestButton.multipleSelectionEnabled = true;
-        let HealthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
-        HealthRef.child("verysick").setValue(false)
-        HealthRef.child("veryhealty").setValue(false)
+
 
     }
 
@@ -93,8 +91,8 @@ class ProblemInputViewController: UIViewController {
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         print(detail.text!)
-        let HealthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
-        HealthRef.child("sleep").setValue(Int())
+        let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
+        userRef.child("currentdata/problem/detail").setValue(detail.text!)
         performSegueWithIdentifier("toInput_2", sender: self)
     }
     

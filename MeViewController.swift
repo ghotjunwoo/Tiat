@@ -18,6 +18,9 @@ class FirstViewController: UIViewController {
     @IBOutlet var birthDayLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var conditionLabel: UILabel!
+    @IBOutlet var ProblemLabel: UILabel!
+    @IBOutlet var statusLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +55,24 @@ class FirstViewController: UIViewController {
 
         
     }
-
+    override func viewDidAppear(animated: Bool) {
+        if let user = FIRAuth.auth()?.currentUser {
+            let feelingRef = FIRDatabase.database().reference().child("users/\(user.uid)/currentdata/feeling")
+            feelingRef.child("condition/donotdisturb").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                if snap == true {
+                 self.conditionLabel.text = "방해금지"
+                }
+            }
+            feelingRef.child("condition/needsattention").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                if snap == true {
+                    self.conditionLabel.text = "관심필요"
+                }
+            }
+            feelingRef.child("detail").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                self.statusLabel.text = String(snap.value)
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
