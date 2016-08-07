@@ -24,7 +24,7 @@
                                 <rect key="frame" x="20" y="20" width="335" height="178"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[이름]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6V-dL-k1z" userLabel="NameLabel">
-                                        <rect key="frame" x="1" y="0.0" width="108" height="51"/>
+                                        <rect key="frame" x="1" y="0.0" width="326" height="51"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -38,15 +38,22 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[생년월일]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z38-5a-WXC" userLabel="BirthLabel">
-                                        <rect key="frame" x="114" y="136" width="221" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyW-Ke-Amj">
                                         <rect key="frame" x="274" y="86" width="42" height="50"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLx-wa-kEe">
+                                        <rect key="frame" x="274" y="0.0" width="53" height="30"/>
+                                        <state key="normal" title="로그아웃"/>
+                                        <connections>
+                                            <action selector="logOutTriggerd:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cFx-Wt-AkO"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[생년월일]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z38-5a-WXC" userLabel="BirthLabel">
+                                        <rect key="frame" x="114" y="136" width="221" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -111,7 +118,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="first" selectedImage="image" id="acW-dT-cKf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -119,6 +126,8 @@
                         <outlet property="genderLabel" destination="UyW-Ke-Amj" id="qrS-Np-n1W"/>
                         <outlet property="nameLabel" destination="i6V-dL-k1z" id="GOR-ZZ-rAw"/>
                         <outlet property="pointLabel" destination="vLX-JW-u0Q" id="peb-fT-icd"/>
+                        <outlet property="profileImageView" destination="mtI-S3-Fxy" id="Zcf-YK-ZUy"/>
+                        <segue destination="RX9-4s-cT7" kind="modal" identifier="logoutSegue" id="EY5-xR-6Lf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -546,15 +555,15 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-16-GFl" userLabel="방해금지 Switch">
                                         <rect key="frame" x="82" y="509" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="doNotDisturbSwitchValueChanged:" destination="4y1-ML-94C" eventType="valueChanged" id="mmO-tG-lNW"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관심필요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGu-zT-Hs7">
                                         <rect key="frame" x="194" y="509" width="66" height="31"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Ht-Ey-el3" userLabel="관심필요 Switch">
-                                        <rect key="frame" x="268" y="509" width="51" height="31"/>
-                                    </switch>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="감정 메시지" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nnq-qU-OVf" userLabel="Detail">
                                         <rect key="frame" x="63" y="47" width="210" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -573,6 +582,12 @@
                                             <action selector="unrestValueChange:" destination="4y1-ML-94C" eventType="valueChanged" id="B0t-bf-adF"/>
                                         </connections>
                                     </slider>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Ht-Ey-el3" userLabel="관심필요 Switch">
+                                        <rect key="frame" x="268" y="509" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="needsAttentionSwitchValueChanged:" destination="4y1-ML-94C" eventType="valueChanged" id="gtR-QN-Ep3"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -589,10 +604,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="angerValueLabel" destination="FyH-dM-Emj" id="ehM-hT-G6q"/>
+                        <outlet property="doNotDisturbSwitch" destination="HPj-16-GFl" id="Evk-Uu-zvm"/>
                         <outlet property="feelingDetailField" destination="Nnq-qU-OVf" id="zT5-Hc-ZF7"/>
                         <outlet property="happyValueLabel" destination="rVn-ZC-afA" id="ngJ-ZM-ahp"/>
                         <outlet property="lonleyValueLabel" destination="i9i-7Q-1Of" id="2jn-ka-utg"/>
                         <outlet property="loveValueLabel" destination="3j4-oJ-uvY" id="uCO-7L-3xS"/>
+                        <outlet property="needsAttentionSwitch" destination="4Ht-Ey-el3" id="U9U-LE-e8y"/>
                         <outlet property="sadValueLabel" destination="DG6-hR-daz" id="vKp-o3-fkC"/>
                         <outlet property="unrestValueLabel" destination="qYo-qg-ESH" id="J4X-k9-vxE"/>
                         <segue destination="Fze-nf-6PK" kind="push" identifier="toMainScreen_3" id="stg-VO-lHQ"/>
@@ -600,12 +617,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV9-ny-cV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362.5" y="-316.5"/>
+            <point key="canvasLocation" x="2285.5" y="-316.5"/>
         </scene>
         <!--Input3-->
         <scene sceneID="tYR-xq-sm1">
             <objects>
-                <viewController id="Fze-nf-6PK" userLabel="Input3" sceneMemberID="viewController">
+                <viewController id="Fze-nf-6PK" userLabel="Input3" customClass="HealthInputViewController" customModule="Tiat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AMb-7H-gZ9"/>
                         <viewControllerLayoutGuide type="bottom" id="MLy-7S-93h"/>
@@ -615,7 +632,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-Bv-K8m" userLabel="hStatusInputView">
-                                <rect key="frame" x="20" y="41" width="335" height="581"/>
+                                <rect key="frame" x="20" y="43" width="335" height="581"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="수면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lr7-bA-jLs">
                                         <rect key="frame" x="21" y="171" width="54" height="21"/>
@@ -626,9 +643,12 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="8xE-1e-gxL" userLabel="Horizontal Slider_기쁨">
                                         <rect key="frame" x="19" y="200" width="248" height="31"/>
                                         <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="sleepValueChanged:" destination="Fze-nf-6PK" eventType="valueChanged" id="Lhf-2e-lx3"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5L-pI-BLO" userLabel="수면지수">
-                                        <rect key="frame" x="273" y="202" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5L-pI-BLO" userLabel="수면지수">
+                                        <rect key="frame" x="281" y="202" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -643,9 +663,12 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="vGL-mS-fCD" userLabel="Horizontal Slider_슬픔">
                                         <rect key="frame" x="19" y="280" width="248" height="31"/>
                                         <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="excerciseValueChanged:" destination="Fze-nf-6PK" eventType="valueChanged" id="Zhm-Nf-thp"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJK-pz-3YN" userLabel="운동지수">
-                                        <rect key="frame" x="274" y="281" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJK-pz-3YN" userLabel="운동지수">
+                                        <rect key="frame" x="282" y="281" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -656,8 +679,8 @@
                                         <color key="textColor" red="0.59999999999999998" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORi-ci-F7h" userLabel="질병지수">
-                                        <rect key="frame" x="273" y="359" width="42" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORi-ci-F7h" userLabel="질병지수">
+                                        <rect key="frame" x="281" y="359" width="42" height="26"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -671,13 +694,10 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="La0-0T-uUH" userLabel="Horizontal Slider_분노">
                                         <rect key="frame" x="19" y="437" width="248" height="31"/>
                                         <color key="tintColor" red="0.40000000000000002" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="hurtValueChanged:" destination="Fze-nf-6PK" eventType="valueChanged" id="wkA-ja-rjJ"/>
+                                        </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8T-oX-rvp" userLabel="상처지수">
-                                        <rect key="frame" x="273" y="436" width="42" height="26"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="매우아픔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCa-4N-aua">
                                         <rect key="frame" x="8" y="526" width="66" height="31"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -697,12 +717,21 @@
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ddp-jU-gWO" userLabel="Horizontal Slider_외로움">
                                         <rect key="frame" x="19" y="359" width="248" height="31"/>
                                         <color key="tintColor" red="0.59999999999999998" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="diseaseValueChanged:" destination="Fze-nf-6PK" eventType="valueChanged" id="iUW-1p-fWK"/>
+                                        </connections>
                                     </slider>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="건강 메시지" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPS-se-1w1" userLabel="Detail">
                                         <rect key="frame" x="63" y="97" width="210" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8T-oX-rvp" userLabel="상처지수">
+                                        <rect key="frame" x="281" y="437" width="42" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -712,6 +741,7 @@
                     <navigationItem key="navigationItem" title="신체  상태를 입력해 주세요" id="fek-Wy-rr4">
                         <barButtonItem key="rightBarButtonItem" title="완료" id="wr9-uZ-3LO">
                             <connections>
+                                <action selector="okSelected:" destination="Fze-nf-6PK" id="8ec-SM-ieA"/>
                                 <segue destination="49e-Tb-3d3" kind="modal" id="4TL-Yx-n46"/>
                             </connections>
                         </barButtonItem>
@@ -719,6 +749,13 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="diseaseValueLabel" destination="ORi-ci-F7h" id="OFD-zO-e2P"/>
+                        <outlet property="excerciseValueLabel" destination="yJK-pz-3YN" id="JwB-Tp-S5g"/>
+                        <outlet property="healthDetailField" destination="rPS-se-1w1" id="ulS-61-7aJ"/>
+                        <outlet property="hurtValueLabel" destination="x8T-oX-rvp" id="GVa-0B-e8S"/>
+                        <outlet property="sleepLabel" destination="e5L-pI-BLO" id="bgd-4Y-mOp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ym-qs-0rF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -766,7 +803,7 @@
         <!--친구 목록-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="FriendsTableViewController" customModule="Tiat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="FriendViewController" customModule="Tiat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W6J-kk-jOR"/>
                         <viewControllerLayoutGuide type="bottom" id="xlG-Rp-gPf"/>
@@ -816,17 +853,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="친구 목록" id="o9F-So-SQt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OzZ-e9-8Zz">
-                            <connections>
-                                <segue destination="brz-LX-cXW" kind="push" id="0jQ-hh-zG1"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OzZ-e9-8Zz"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366.5" y="519.5"/>
+            <point key="canvasLocation" x="1302.5" y="529.5"/>
         </scene>
         <!--친구 이름-->
         <scene sceneID="Ile-Pz-QMa">
@@ -880,50 +913,6 @@
             </objects>
             <point key="canvasLocation" x="1780.5" y="519.5"/>
         </scene>
-        <!--친구 추가-->
-        <scene sceneID="ld8-oc-LBE">
-            <objects>
-                <viewController id="brz-LX-cXW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7S4-aY-1Ne"/>
-                        <viewControllerLayoutGuide type="bottom" id="Grv-ti-ogo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xDv-oW-gUM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEr-Wb-n2I">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="brz-LX-cXW" id="gtx-59-iNW"/>
-                                </connections>
-                            </searchBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="친구 추가" id="aL2-jk-ViA"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="Pl4-CQ-B8I" id="5h6-F2-Gwf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hug-Xn-75q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="Pl4-CQ-B8I">
-                    <connections>
-                        <outlet property="delegate" destination="brz-LX-cXW" id="Jmt-qY-HPo"/>
-                        <outlet property="searchBar" destination="mEr-Wb-n2I" id="8oo-yK-PeZ"/>
-                        <outlet property="searchContentsController" destination="brz-LX-cXW" id="l73-gh-dz8"/>
-                        <outlet property="searchResultsDataSource" destination="brz-LX-cXW" id="QqA-Ci-Tuh"/>
-                        <outlet property="searchResultsDelegate" destination="brz-LX-cXW" id="3g5-lr-3kS"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="2202.5" y="529.5"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -938,9 +927,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="rPL-rS-SBz" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="0Ad-z4-f8F" kind="relationship" relationship="viewControllers" id="B9f-BY-cf3"/>
                         <segue destination="5Uf-CT-jGe" kind="relationship" relationship="viewControllers" id="7YW-Lv-hLP"/>
+                        <segue destination="rPL-rS-SBz" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -977,13 +966,6 @@
                                 <state key="normal" title="회원가입"/>
                                 <connections>
                                     <segue destination="rfB-NY-2hX" kind="modal" id="51i-X6-otj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNo-JR-zBS">
-                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                <state key="normal" title="임시"/>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="modal" id="7aZ-Ny-xih"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-aJ-HV7">
@@ -1083,14 +1065,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
-                                <rect key="frame" x="112" y="86" width="151" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                <connections>
-                                    <action selector="nextKeyPressed:" destination="rfB-NY-2hX" eventType="primaryActionTriggered" id="aUb-6e-LeJ"/>
-                                </connections>
-                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
+                                <rect key="frame" x="20" y="86" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gwm-AQ-FaV" secondAttribute="height" multiplier="1:1" id="HuF-jy-Zcf"/>
+                                    <constraint firstAttribute="width" constant="70" id="Mdb-if-u80"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-kv-jk9">
                                 <rect key="frame" x="151" y="520" width="72" height="30"/>
                                 <state key="normal" title="회원가입"/>
@@ -1118,13 +1099,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
-                                <rect key="frame" x="16" y="86" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="gwm-AQ-FaV" secondAttribute="height" multiplier="1:1" id="HuF-jy-Zcf"/>
-                                    <constraint firstAttribute="width" constant="70" id="Mdb-if-u80"/>
-                                </constraints>
-                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
+                                <rect key="frame" x="112" y="86" width="151" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="nextKeyPressed:" destination="rfB-NY-2hX" eventType="primaryActionTriggered" id="aUb-6e-LeJ"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1149,6 +1131,7 @@
                         <outlet property="passwordCheckField" destination="7RS-wY-r7p" id="en8-YB-gmG"/>
                         <outlet property="passwordField" destination="0T9-10-aod" id="u8c-Fx-qog"/>
                         <outlet property="profileImageView" destination="gwm-AQ-FaV" id="odp-JV-ale"/>
+                        <outlet property="registerButton" destination="Ep0-kv-jk9" id="1GY-wH-USJ"/>
                         <segue destination="49e-Tb-3d3" kind="modal" identifier="toMainScreen_2" id="086-PN-ffH"/>
                     </connections>
                 </viewController>
@@ -1200,10 +1183,12 @@
         <image name="Chat-100" width="100" height="100"/>
         <image name="Gift-100" width="100" height="100"/>
         <image name="first" width="30" height="30"/>
+        <image name="image" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
         <image name="status_green" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="086-PN-ffH"/>
+        <segue reference="j5N-4W-rBg"/>
     </inferredMetricsTieBreakers>
 </document>

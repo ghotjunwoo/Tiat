@@ -33,6 +33,11 @@ class ProblemInputViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        detail.endEditing(true)
+    }
+    
     @IBAction func markButtonSelected(radioButton : DLRadioButton) {
         if (radioButton.multipleSelectionEnabled) {
             let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
@@ -83,7 +88,9 @@ class ProblemInputViewController: UIViewController {
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         print(detail.text!)
-        FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/detail").setValue(detail.text!)
+        let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
+
+        userRef.child("currentdata/detail").setValue(detail.text!)
         performSegueWithIdentifier("toInput_2", sender: self)
     }
     

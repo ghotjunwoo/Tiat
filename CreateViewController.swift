@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 import MobileCoreServices
 
 class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -19,14 +20,19 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var birthDayField: UITextField!
     @IBOutlet var genderControl: UISegmentedControl!
     @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var registerButton: UIButton!
     
     let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.Default){(ACTION) in
         print("B_T")}
     let userRef = FIRDatabase.database().reference().child("users")
     let user = FIRAuth.auth()?.currentUser
     let imagePicker = UIImagePickerController()
+    let storageRef = FIRStorage.storage().referenceForURL("gs://tiat-ea6fd.appspot.com")
+    
+
     var gender = "남"
-    var imageUrl = ""
+    var image:UIImage = UIImage(named: "status_green")!
+    var metadata = FIRStorageMetadata()
     
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField == birthDayField {
@@ -67,15 +73,27 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                 self.presentViewController(duplAlert, animated: true, completion: nil)
             } else {
                 
-                let createAlert = UIAlertController(title: "성공", message: "계정이 생성되었습니다", preferredStyle: UIAlertControllerStyle.Alert);
+                let profileImageRef = self.storageRef.child("users/\(user!.uid)/profileimage")
+                self.metadata.contentType = "image/jpeg"
+                let newImage = UIImageJPEGRepresentation(self.profileImageView.image!, 3.0)
+                profileImageRef.putData(newImage!, metadata: self.metadata) { metadata, error in
+                    
+                    if error != nil {
+                        
+                    } else {
+                        self.userRef.child("\(user!.uid)/name").setValue(self.nameField.text!)
+                        self.userRef.child("\(user!.uid)/birthday").setValue(self.birthDayField.text!)
+                        self.userRef.child("\(user!.uid)/gender").setValue(self.gender)
+                        self.userRef.child("\(user!.uid)/point").setValue(0)
+                        self.login()
+                    }
+                }
+                self.registerButton.enabled = false
                 
-                createAlert.addAction(self.okAction);
-                self.presentViewController(createAlert, animated: true, completion: nil)
-                self.userRef.child("\(user!.uid)/name").setValue(self.nameField.text!)
-                self.userRef.child("\(user!.uid)/birthday").setValue(self.birthDayField.text!)
-                self.userRef.child("\(user!.uid)/gender").setValue(self.gender)
-                self.userRef.child("\(user!.uid)/point").setValue(0)
-                self.login()
+                //TODO: fix button
+                
+                
+                
                 
             }})
     }

@@ -45,7 +45,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if FIRAuth.auth()?.currentUser != nil {
+            performSegueWithIdentifier("toMainScreen", sender: self)
+        }
         
     }
     
