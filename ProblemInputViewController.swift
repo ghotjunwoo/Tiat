@@ -23,11 +23,16 @@ class ProblemInputViewController: UIViewController {
     @IBOutlet var detail: UITextField!
     
     let user = FIRAuth.auth()?.currentUser
+
     var currentProblemValue = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         TestButton.multipleSelectionEnabled = true;
+        let HealthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
+        HealthRef.child("verysick").setValue(false)
+        HealthRef.child("veryhealty").setValue(false)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,9 +93,8 @@ class ProblemInputViewController: UIViewController {
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         print(detail.text!)
-        let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
-
-        userRef.child("currentdata/detail").setValue(detail.text!)
+        let HealthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
+        HealthRef.child("sleep").setValue(Int())
         performSegueWithIdentifier("toInput_2", sender: self)
     }
     

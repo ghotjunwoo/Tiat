@@ -698,14 +698,17 @@
                                             <action selector="hurtValueChanged:" destination="Fze-nf-6PK" eventType="valueChanged" id="wkA-ja-rjJ"/>
                                         </connections>
                                     </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8T-oX-rvp" userLabel="상처지수">
+                                        <rect key="frame" x="281" y="437" width="42" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="매우아픔" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCa-4N-aua">
                                         <rect key="frame" x="8" y="526" width="66" height="31"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nDt-fe-tvk" userLabel="매우아픔 Switch">
-                                        <rect key="frame" x="82" y="526" width="51" height="31"/>
-                                    </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="매우건강함" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuo-Rj-2Co">
                                         <rect key="frame" x="191" y="526" width="84" height="31"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -713,6 +716,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3mU-gb-Hk9" userLabel="매우건강함 Switch">
                                         <rect key="frame" x="278" y="526" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="veryHealthyValueChanged:" destination="Fze-nf-6PK" eventType="valueChanged" id="ZGw-4i-GwQ"/>
+                                        </connections>
                                     </switch>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ddp-jU-gWO" userLabel="Horizontal Slider_외로움">
                                         <rect key="frame" x="19" y="359" width="248" height="31"/>
@@ -726,12 +732,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8T-oX-rvp" userLabel="상처지수">
-                                        <rect key="frame" x="281" y="437" width="42" height="26"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nDt-fe-tvk" userLabel="매우아픔 Switch">
+                                        <rect key="frame" x="82" y="526" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="verySickValueChange:" destination="Fze-nf-6PK" eventType="valueChanged" id="eYe-t5-7v0"/>
+                                        </connections>
+                                    </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -755,6 +761,8 @@
                         <outlet property="healthDetailField" destination="rPS-se-1w1" id="ulS-61-7aJ"/>
                         <outlet property="hurtValueLabel" destination="x8T-oX-rvp" id="GVa-0B-e8S"/>
                         <outlet property="sleepLabel" destination="e5L-pI-BLO" id="bgd-4Y-mOp"/>
+                        <outlet property="veryHealthySwitch" destination="3mU-gb-Hk9" id="WCi-5P-rXx"/>
+                        <outlet property="verySickSwitch" destination="nDt-fe-tvk" id="uBm-Ts-3dt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ym-qs-0rF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1188,7 +1196,7 @@
         <image name="status_green" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="086-PN-ffH"/>
+        <segue reference="4TL-Yx-n46"/>
         <segue reference="j5N-4W-rBg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -90,7 +90,6 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                 }
                 self.registerButton.enabled = false
                 
-                //TODO: fix button
                 
                 
                 

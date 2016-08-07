@@ -16,15 +16,21 @@ class HealthInputViewController: UIViewController {
     @IBOutlet var diseaseValueLabel: UILabel!
     @IBOutlet var hurtValueLabel: UILabel!
     @IBOutlet var healthDetailField: UITextField!
+    @IBOutlet var verySickSwitch: UISwitch!
+    @IBOutlet var veryHealthySwitch: UISwitch!
+    
+    
     let step: Float = 1
-    let healthRef = FIRDatabase.database().reference().child("user/\(FIRAuth.auth()?.currentUser!.uid)/currentdata/health)")
+    let user = FIRAuth.auth()?.currentUser!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 
     }
-
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 
@@ -54,10 +60,22 @@ class HealthInputViewController: UIViewController {
         hurtValueLabel.text = "\(Int(roundedValue))"
     }
     @IBAction func okSelected(sender: AnyObject) {
+        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health)")
+
         healthRef.child("sleep").setValue(Int(sleepLabel.text!))
         healthRef.child("excercise").setValue(Int(excerciseValueLabel.text!))
         healthRef.child("disease").setValue(Int(diseaseValueLabel.text!))
         healthRef.child("hurt").setValue(Int(hurtValueLabel.text!))
         healthRef.child("detail").setValue(healthDetailField.text!)
+    }
+    
+    @IBAction func verySickValueChange(sender: UISwitch) {
+        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health)")
+        if verySickSwitch.on {
+            healthRef.child("conditions")
+        }
+    }
+    @IBAction func veryHealthyValueChanged(sender: UISwitch) {
+        
     }
 }

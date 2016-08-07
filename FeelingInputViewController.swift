@@ -21,10 +21,17 @@ class FeelingInputViewController: UIViewController {
     @IBOutlet var doNotDisturbSwitch: UISwitch!
     @IBOutlet var needsAttentionSwitch: UISwitch!
     
-    let feelingRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()?.currentUser!.uid)/currentdata/feeling")
+    let user = FIRAuth.auth()?.currentUser
     let step: Float = 1
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
+
         feelingRef.child("conditions/donotdisturb").setValue(false)
         feelingRef.child("conditions/needsattention").setValue(false)
     }
@@ -66,6 +73,8 @@ class FeelingInputViewController: UIViewController {
         unrestValueLabel.text = "\(Int(roundedValue))"
     }
     @IBAction func doNotDisturbSwitchValueChanged(sender: UISwitch) {
+        let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
+
         if doNotDisturbSwitch.on {
             feelingRef.child("conditions/donotdisturb").setValue(true)
         } else {
@@ -73,6 +82,8 @@ class FeelingInputViewController: UIViewController {
         }
     }
     @IBAction func needsAttentionSwitchValueChanged(sender: UISwitch) {
+        let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
+
         if needsAttentionSwitch.on {
             feelingRef.child("conditions/needsattention").setValue(true)
         } else {
@@ -82,7 +93,7 @@ class FeelingInputViewController: UIViewController {
     
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
-        let feelingRef = FIRDatabase.database().reference().child("users/\(FIRAuth.auth()?.currentUser!.uid)/currentdata/feeling")
+        let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
         feelingRef.child("happy").setValue(Int(happyValueLabel.text!))
         feelingRef.child("sad").setValue(Int(sadValueLabel.text!))
         feelingRef.child("lonley").setValue(Int(lonleyValueLabel.text!))
