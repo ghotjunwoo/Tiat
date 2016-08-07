@@ -1,0 +1,827 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B119852D1D50829B00104F72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B119852C1D50829B00104F72 /* Main.storyboard */; };
+		B13583EB1D50BD4E007561A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13583EA1D50BD4E007561A5 /* LoginViewController.swift */; };
+		B182570B1D5090F600DDADBD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B182570A1D5090F600DDADBD /* CloudKit.framework */; };
+		B182570D1D5091DC00DDADBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B182570C1D5091DC00DDADBD /* GoogleService-Info.plist */; };
+		B199A0811D51D21400E845E4 /* ProblemInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199A0801D51D21400E845E4 /* ProblemInputViewController.swift */; };
+		B199A0831D51E6E300E845E4 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B199A0821D51E6E300E845E4 /* CreateViewController.swift */; };
+		B199A08A1D51FD8000E845E4 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B199A0891D51FD8000E845E4 /* PhotosUI.framework */; };
+		B199A08C1D51FD8000E845E4 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B199A08B1D51FD8000E845E4 /* Photos.framework */; };
+		B199A0961D51FD8000E845E4 /* EditProfileImage.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B199A0881D51FD8000E845E4 /* EditProfileImage.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB31ABEB1D551A6000B425E6 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31ABEA1D551A6000B425E6 /* FriendsTableViewCell.swift */; };
+		CB31ABF11D551C0100B425E6 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31ABF01D551C0100B425E6 /* FriendsTableViewController.swift */; };
+		CB4EB5021D4FB52700273BB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EB5011D4FB52700273BB6 /* AppDelegate.swift */; };
+		CB4EB5041D4FB52700273BB6 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EB5031D4FB52700273BB6 /* MeViewController.swift */; };
+		CB4EB50B1D4FB52700273BB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4EB50A1D4FB52700273BB6 /* Assets.xcassets */; };
+		CB4EB50E1D4FB52700273BB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4EB50C1D4FB52700273BB6 /* LaunchScreen.storyboard */; };
+		CB4EB5191D4FB52700273BB6 /* TiatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EB5181D4FB52700273BB6 /* TiatTests.swift */; };
+		CB4EB5241D4FB52700273BB6 /* TiatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4EB5231D4FB52700273BB6 /* TiatUITests.swift */; };
+		FEAAC4D42A06A0827414F996 /* Pods_Tiat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0B3450267EFB68BC9C3167 /* Pods_Tiat.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B199A0941D51FD8000E845E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB4EB4F61D4FB52700273BB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B199A0871D51FD7F00E845E4;
+			remoteInfo = EditProfileImage;
+		};
+		CB4EB5151D4FB52700273BB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB4EB4F61D4FB52700273BB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB4EB4FD1D4FB52700273BB6;
+			remoteInfo = Tiat;
+		};
+		CB4EB5201D4FB52700273BB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB4EB4F61D4FB52700273BB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB4EB4FD1D4FB52700273BB6;
+			remoteInfo = Tiat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B199A09A1D51FD8000E845E4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B199A0961D51FD8000E845E4 /* EditProfileImage.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0AE3A724C793BBD6124AEAF9 /* Pods_TiatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D77A50C658A135B0998C400 /* Pods_TiatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TiatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0B3450267EFB68BC9C3167 /* Pods_Tiat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF9E9A80E6898B53CFC40BB /* Pods-Tiat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tiat/Pods-Tiat.debug.xcconfig"; sourceTree = "<group>"; };
+		A014E6BDDBCB7F4DFBBF8B68 /* Pods-Tiat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tiat/Pods-Tiat.release.xcconfig"; sourceTree = "<group>"; };
+		B119852C1D50829B00104F72 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B13583EA1D50BD4E007561A5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B18257091D5090F200DDADBD /* Tiat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tiat.entitlements; sourceTree = "<group>"; };
+		B182570A1D5090F600DDADBD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		B182570C1D5091DC00DDADBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B199A0801D51D21400E845E4 /* ProblemInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProblemInputViewController.swift; sourceTree = "<group>"; };
+		B199A0821D51E6E300E845E4 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		B199A0881D51FD8000E845E4 /* EditProfileImage.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EditProfileImage.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B199A0891D51FD8000E845E4 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		B199A08B1D51FD8000E845E4 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		CB31ABEA1D551A6000B425E6 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		CB31ABF01D551C0100B425E6 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		CB4EB4FE1D4FB52700273BB6 /* Tiat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4EB5011D4FB52700273BB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB4EB5031D4FB52700273BB6 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		CB4EB50A1D4FB52700273BB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB4EB50D1D4FB52700273BB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB4EB50F1D4FB52700273BB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB4EB5141D4FB52700273BB6 /* TiatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TiatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4EB5181D4FB52700273BB6 /* TiatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiatTests.swift; sourceTree = "<group>"; };
+		CB4EB51A1D4FB52700273BB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB4EB51F1D4FB52700273BB6 /* TiatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TiatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4EB5231D4FB52700273BB6 /* TiatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiatUITests.swift; sourceTree = "<group>"; };
+		CB4EB5251D4FB52700273BB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B199A0851D51FD7F00E845E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B199A08A1D51FD8000E845E4 /* PhotosUI.framework in Frameworks */,
+				B199A08C1D51FD8000E845E4 /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB4FB1D4FB52700273BB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B182570B1D5090F600DDADBD /* CloudKit.framework in Frameworks */,
+				FEAAC4D42A06A0827414F996 /* Pods_Tiat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB5111D4FB52700273BB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB51C1D4FB52700273BB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1ACC0A336216626BC72D43B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FF9E9A80E6898B53CFC40BB /* Pods-Tiat.debug.xcconfig */,
+				A014E6BDDBCB7F4DFBBF8B68 /* Pods-Tiat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C1EA6EE92BCF74F8707B4B62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C0B3450267EFB68BC9C3167 /* Pods_Tiat.framework */,
+				4D77A50C658A135B0998C400 /* Pods_TiatTests.framework */,
+				0AE3A724C793BBD6124AEAF9 /* Pods_TiatUITests.framework */,
+				B199A0891D51FD8000E845E4 /* PhotosUI.framework */,
+				B199A08B1D51FD8000E845E4 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB4EB4F51D4FB52700273BB6 = {
+			isa = PBXGroup;
+			children = (
+				B182570A1D5090F600DDADBD /* CloudKit.framework */,
+				CB4EB5001D4FB52700273BB6 /* Tiat */,
+				CB4EB5171D4FB52700273BB6 /* TiatTests */,
+				CB4EB5221D4FB52700273BB6 /* TiatUITests */,
+				CB4EB4FF1D4FB52700273BB6 /* Products */,
+				1ACC0A336216626BC72D43B5 /* Pods */,
+				C1EA6EE92BCF74F8707B4B62 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CB4EB4FF1D4FB52700273BB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB4EB4FE1D4FB52700273BB6 /* Tiat.app */,
+				CB4EB5141D4FB52700273BB6 /* TiatTests.xctest */,
+				CB4EB51F1D4FB52700273BB6 /* TiatUITests.xctest */,
+				B199A0881D51FD8000E845E4 /* EditProfileImage.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB4EB5001D4FB52700273BB6 /* Tiat */ = {
+			isa = PBXGroup;
+			children = (
+				B18257091D5090F200DDADBD /* Tiat.entitlements */,
+				CB4EB5011D4FB52700273BB6 /* AppDelegate.swift */,
+				CB4EB5031D4FB52700273BB6 /* MeViewController.swift */,
+				B13583EA1D50BD4E007561A5 /* LoginViewController.swift */,
+				B199A0801D51D21400E845E4 /* ProblemInputViewController.swift */,
+				B199A0821D51E6E300E845E4 /* CreateViewController.swift */,
+				CB31ABF01D551C0100B425E6 /* FriendsTableViewController.swift */,
+				B119852C1D50829B00104F72 /* Main.storyboard */,
+				CB31ABEA1D551A6000B425E6 /* FriendsTableViewCell.swift */,
+				CB4EB50A1D4FB52700273BB6 /* Assets.xcassets */,
+				CB4EB50C1D4FB52700273BB6 /* LaunchScreen.storyboard */,
+				CB4EB50F1D4FB52700273BB6 /* Info.plist */,
+				B182570C1D5091DC00DDADBD /* GoogleService-Info.plist */,
+			);
+			path = Tiat;
+			sourceTree = "<group>";
+		};
+		CB4EB5171D4FB52700273BB6 /* TiatTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB4EB5181D4FB52700273BB6 /* TiatTests.swift */,
+				CB4EB51A1D4FB52700273BB6 /* Info.plist */,
+			);
+			path = TiatTests;
+			sourceTree = "<group>";
+		};
+		CB4EB5221D4FB52700273BB6 /* TiatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB4EB5231D4FB52700273BB6 /* TiatUITests.swift */,
+				CB4EB5251D4FB52700273BB6 /* Info.plist */,
+			);
+			path = TiatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B199A0871D51FD7F00E845E4 /* EditProfileImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B199A0971D51FD8000E845E4 /* Build configuration list for PBXNativeTarget "EditProfileImage" */;
+			buildPhases = (
+				B199A0841D51FD7F00E845E4 /* Sources */,
+				B199A0851D51FD7F00E845E4 /* Frameworks */,
+				B199A0861D51FD7F00E845E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EditProfileImage;
+			productName = EditProfileImage;
+			productReference = B199A0881D51FD8000E845E4 /* EditProfileImage.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CB4EB4FD1D4FB52700273BB6 /* Tiat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB4EB5281D4FB52700273BB6 /* Build configuration list for PBXNativeTarget "Tiat" */;
+			buildPhases = (
+				882322DC968A5BDD2EB47AD4 /* [CP] Check Pods Manifest.lock */,
+				CB4EB4FA1D4FB52700273BB6 /* Sources */,
+				CB4EB4FB1D4FB52700273BB6 /* Frameworks */,
+				CB4EB4FC1D4FB52700273BB6 /* Resources */,
+				C830A5047FCEE5B675F63E83 /* [CP] Embed Pods Frameworks */,
+				7F8618CD7591EA2998425D96 /* [CP] Copy Pods Resources */,
+				B199A09A1D51FD8000E845E4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B199A0951D51FD8000E845E4 /* PBXTargetDependency */,
+			);
+			name = Tiat;
+			productName = Tiat;
+			productReference = CB4EB4FE1D4FB52700273BB6 /* Tiat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB4EB5131D4FB52700273BB6 /* TiatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB4EB52B1D4FB52700273BB6 /* Build configuration list for PBXNativeTarget "TiatTests" */;
+			buildPhases = (
+				CE2266E6CB56260539BB886F /* [CP] Check Pods Manifest.lock */,
+				CB4EB5101D4FB52700273BB6 /* Sources */,
+				CB4EB5111D4FB52700273BB6 /* Frameworks */,
+				CB4EB5121D4FB52700273BB6 /* Resources */,
+				8C132B35AC6EFBFA7D831AD6 /* [CP] Embed Pods Frameworks */,
+				D3F714DE3947BE9C3C40DD9C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB4EB5161D4FB52700273BB6 /* PBXTargetDependency */,
+			);
+			name = TiatTests;
+			productName = TiatTests;
+			productReference = CB4EB5141D4FB52700273BB6 /* TiatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB4EB51E1D4FB52700273BB6 /* TiatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB4EB52E1D4FB52700273BB6 /* Build configuration list for PBXNativeTarget "TiatUITests" */;
+			buildPhases = (
+				9056676B68E9384276F13ECF /* [CP] Check Pods Manifest.lock */,
+				CB4EB51B1D4FB52700273BB6 /* Sources */,
+				CB4EB51C1D4FB52700273BB6 /* Frameworks */,
+				CB4EB51D1D4FB52700273BB6 /* Resources */,
+				E5D6BDD12F8122D0611C9C05 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB4EB5211D4FB52700273BB6 /* PBXTargetDependency */,
+			);
+			name = TiatUITests;
+			productName = TiatUITests;
+			productReference = CB4EB51F1D4FB52700273BB6 /* TiatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB4EB4F61D4FB52700273BB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = JW;
+				TargetAttributes = {
+					B199A0871D51FD7F00E845E4 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5WT85R4EH7;
+					};
+					CB4EB4FD1D4FB52700273BB6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5WT85R4EH7;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					CB4EB5131D4FB52700273BB6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = CB4EB4FD1D4FB52700273BB6;
+					};
+					CB4EB51E1D4FB52700273BB6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = CB4EB4FD1D4FB52700273BB6;
+					};
+				};
+			};
+			buildConfigurationList = CB4EB4F91D4FB52700273BB6 /* Build configuration list for PBXProject "Tiat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB4EB4F51D4FB52700273BB6;
+			productRefGroup = CB4EB4FF1D4FB52700273BB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB4EB4FD1D4FB52700273BB6 /* Tiat */,
+				CB4EB5131D4FB52700273BB6 /* TiatTests */,
+				CB4EB51E1D4FB52700273BB6 /* TiatUITests */,
+				B199A0871D51FD7F00E845E4 /* EditProfileImage */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B199A0861D51FD7F00E845E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB4FC1D4FB52700273BB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B119852D1D50829B00104F72 /* Main.storyboard in Resources */,
+				B182570D1D5091DC00DDADBD /* GoogleService-Info.plist in Resources */,
+				CB4EB50E1D4FB52700273BB6 /* LaunchScreen.storyboard in Resources */,
+				CB4EB50B1D4FB52700273BB6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB5121D4FB52700273BB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB51D1D4FB52700273BB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F8618CD7591EA2998425D96 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiat/Pods-Tiat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		882322DC968A5BDD2EB47AD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C132B35AC6EFBFA7D831AD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiatTests/Pods-TiatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9056676B68E9384276F13ECF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C830A5047FCEE5B675F63E83 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiat/Pods-Tiat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE2266E6CB56260539BB886F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3F714DE3947BE9C3C40DD9C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiatTests/Pods-TiatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5D6BDD12F8122D0611C9C05 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TiatUITests/Pods-TiatUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B199A0841D51FD7F00E845E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB4FA1D4FB52700273BB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B199A0811D51D21400E845E4 /* ProblemInputViewController.swift in Sources */,
+				B13583EB1D50BD4E007561A5 /* LoginViewController.swift in Sources */,
+				CB31ABF11D551C0100B425E6 /* FriendsTableViewController.swift in Sources */,
+				B199A0831D51E6E300E845E4 /* CreateViewController.swift in Sources */,
+				CB31ABEB1D551A6000B425E6 /* FriendsTableViewCell.swift in Sources */,
+				CB4EB5021D4FB52700273BB6 /* AppDelegate.swift in Sources */,
+				CB4EB5041D4FB52700273BB6 /* MeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB5101D4FB52700273BB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4EB5191D4FB52700273BB6 /* TiatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB4EB51B1D4FB52700273BB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB4EB5241D4FB52700273BB6 /* TiatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B199A0951D51FD8000E845E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B199A0871D51FD7F00E845E4 /* EditProfileImage */;
+			targetProxy = B199A0941D51FD8000E845E4 /* PBXContainerItemProxy */;
+		};
+		CB4EB5161D4FB52700273BB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB4EB4FD1D4FB52700273BB6 /* Tiat */;
+			targetProxy = CB4EB5151D4FB52700273BB6 /* PBXContainerItemProxy */;
+		};
+		CB4EB5211D4FB52700273BB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB4EB4FD1D4FB52700273BB6 /* Tiat */;
+			targetProxy = CB4EB5201D4FB52700273BB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB4EB50C1D4FB52700273BB6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB4EB50D1D4FB52700273BB6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B199A0981D51FD8000E845E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = EditProfileImage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.Tiat.EditProfileImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B199A0991D51FD8000E845E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = EditProfileImage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.Tiat.EditProfileImage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB4EB5261D4FB52700273BB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB4EB5271D4FB52700273BB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB4EB5291D4FB52700273BB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF9E9A80E6898B53CFC40BB /* Pods-Tiat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tiat/Tiat.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Tiat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.Tiat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		CB4EB52A1D4FB52700273BB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A014E6BDDBCB7F4DFBBF8B68 /* Pods-Tiat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tiat/Tiat.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Tiat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.Tiat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		CB4EB52C1D4FB52700273BB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TiatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.TiatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tiat.app/Tiat";
+			};
+			name = Debug;
+		};
+		CB4EB52D1D4FB52700273BB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TiatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.TiatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tiat.app/Tiat";
+			};
+			name = Release;
+		};
+		CB4EB52F1D4FB52700273BB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TiatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.TiatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Tiat;
+			};
+			name = Debug;
+		};
+		CB4EB5301D4FB52700273BB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TiatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jw.TiatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Tiat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B199A0971D51FD8000E845E4 /* Build configuration list for PBXNativeTarget "EditProfileImage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B199A0981D51FD8000E845E4 /* Debug */,
+				B199A0991D51FD8000E845E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB4EB4F91D4FB52700273BB6 /* Build configuration list for PBXProject "Tiat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4EB5261D4FB52700273BB6 /* Debug */,
+				CB4EB5271D4FB52700273BB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB4EB5281D4FB52700273BB6 /* Build configuration list for PBXNativeTarget "Tiat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4EB5291D4FB52700273BB6 /* Debug */,
+				CB4EB52A1D4FB52700273BB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB4EB52B1D4FB52700273BB6 /* Build configuration list for PBXNativeTarget "TiatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4EB52C1D4FB52700273BB6 /* Debug */,
+				CB4EB52D1D4FB52700273BB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB4EB52E1D4FB52700273BB6 /* Build configuration list for PBXNativeTarget "TiatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4EB52F1D4FB52700273BB6 /* Debug */,
+				CB4EB5301D4FB52700273BB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB4EB4F61D4FB52700273BB6 /* Project object */;
+}
