@@ -25,7 +25,11 @@ class HealthInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
         
+        healthRef.child("conditions/verysick").setValue(false)
+        healthRef.child("conditions/veryhealthy").setValue(false)
+
 
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -60,22 +64,30 @@ class HealthInputViewController: UIViewController {
         hurtValueLabel.text = "\(Int(roundedValue))"
     }
     @IBAction func okSelected(sender: AnyObject) {
-        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health)")
+        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
 
         healthRef.child("sleep").setValue(Int(sleepLabel.text!))
         healthRef.child("excercise").setValue(Int(excerciseValueLabel.text!))
         healthRef.child("disease").setValue(Int(diseaseValueLabel.text!))
         healthRef.child("hurt").setValue(Int(hurtValueLabel.text!))
         healthRef.child("detail").setValue(healthDetailField.text!)
+        performSegueWithIdentifier("toMeScreen", sender: self)
     }
     
     @IBAction func verySickValueChange(sender: UISwitch) {
-        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health)")
+        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
         if verySickSwitch.on {
-            healthRef.child("conditions")
+            healthRef.child("conditions/verysick").setValue(true)
+        } else {
+            healthRef.child("conditions/verysick").setValue(false)
         }
     }
     @IBAction func veryHealthyValueChanged(sender: UISwitch) {
-        
+        let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
+        if verySickSwitch.on {
+            healthRef.child("conditions/veryhealty").setValue(true)
+        } else {
+            healthRef.child("conditions/verysick").setValue(false)
+        }
     }
 }
