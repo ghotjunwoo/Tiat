@@ -135,57 +135,68 @@ class FirstViewController: UIViewController {
             feelingRef.child("detail").observeEventType(.Value) { (snap: FIRDataSnapshot) in
                 self.statusLabel.text = snap.value as? String
             }
+            
             feelingRef.child("happy").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let happyValue = snap.value as! Float / 5
-                self.circleGraph.endArc = CGFloat(happyValue)
-
-            }
-            feelingRef.child("sad").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let sadValue = snap.value as! Float / 5
-                self.sadCircleGraph.endArc = CGFloat(sadValue)
-                
-            }
-            feelingRef.child("lonley").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let lonleyValue = snap.value as! Float / 5
-                self.lonleyCircleCraph.endArc = CGFloat(lonleyValue)
-                
-            }
-            feelingRef.child("anger").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let angerValue = snap.value as! Float / 5
-                self.angryCircleGraph.endArc = CGFloat(angerValue)
-                
-            }
-            feelingRef.child("love").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let loveValue = snap.value as! Float / 5
-                self.loveCircleGraph.endArc = CGFloat(loveValue)
-                
-            }
-            feelingRef.child("unrest").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let unrestValue = snap.value as! Float / 5
-                self.unrestCircleGraph.endArc = CGFloat(unrestValue)
+                if snap.value! is NSNull {
+                    
+                } else {
+                    let happyValue = snap.value as! Float / 5
+                    self.circleGraph.endArc = CGFloat(happyValue)
+                    feelingRef.child("sad").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let sadValue = snap.value as! Float / 5
+                        self.sadCircleGraph.endArc = CGFloat(sadValue)
+                        
+                    }
+                    feelingRef.child("lonley").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let lonleyValue = snap.value as! Float / 5
+                        self.lonleyCircleCraph.endArc = CGFloat(lonleyValue)
+                        
+                    }
+                    feelingRef.child("anger").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let angerValue = snap.value as! Float / 5
+                        self.angryCircleGraph.endArc = CGFloat(angerValue)
+                        
+                    }
+                    feelingRef.child("love").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let loveValue = snap.value as! Float / 5
+                        self.loveCircleGraph.endArc = CGFloat(loveValue)
+                        
+                    }
+                    feelingRef.child("unrest").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let unrestValue = snap.value as! Float / 5
+                        self.unrestCircleGraph.endArc = CGFloat(unrestValue)
+                        
+                    }
+                    
+                }
                 
             }
             healthRef.child("sleep").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let sleepValue = snap.value as! Float / 5
-                self.sleepCircleGraph.endArc = CGFloat(sleepValue)
+                if snap.value! is NSNull {} else {
+                    let sleepValue = snap.value as! Float / 5
+                    self.sleepCircleGraph.endArc = CGFloat(sleepValue)
+                    healthRef.child("excercise").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let Value = snap.value as! Float / 5
+                        self.excerciseCircleGraphView.endArc = CGFloat(Value)
+                        
+                    }
+                    healthRef.child("disease").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let Value = snap.value as! Float / 5
+                        self.diseaseCircleGraph.endArc = CGFloat(Value)
+                        
+                    }
+                    healthRef.child("hurt").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                        let Value = snap.value as! Float / 5
+                        self.hurtCircleGraph.endArc = CGFloat(Value)
+                        
+                    }
+
+                }
+
                 
             }
-            healthRef.child("excercise").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let Value = snap.value as! Float / 5
-                self.excerciseCircleGraphView.endArc = CGFloat(Value)
-                
-            }
-            healthRef.child("disease").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let Value = snap.value as! Float / 5
-                self.diseaseCircleGraph.endArc = CGFloat(Value)
-                
-            }
-            healthRef.child("hurt").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                let Value = snap.value as! Float / 5
-                self.hurtCircleGraph.endArc = CGFloat(Value)
-                
-            }
-        }
+            
+                    }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -22,17 +22,20 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var registerButton: UIButton!
     
+    //MARK: Declaration
+    
     let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.Default){(ACTION) in
         print("B_T")}
     let userRef = FIRDatabase.database().reference().child("users")
     let user = FIRAuth.auth()?.currentUser
     let imagePicker = UIImagePickerController()
     let storageRef = FIRStorage.storage().referenceForURL("gs://tiat-ea6fd.appspot.com")
-    
+    var userNum = 0
 
     var gender = "남"
     var image:UIImage = UIImage(named: "status_green")!
     var metadata = FIRStorageMetadata()
+    
     
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField == birthDayField {
@@ -80,14 +83,14 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                     
                     if error != nil {
                         
-                    } else {
-                        self.userRef.child("\(user!.uid)/name").setValue(self.nameField.text!)
-                        self.userRef.child("\(user!.uid)/birthday").setValue(self.birthDayField.text!)
-                        self.userRef.child("\(user!.uid)/gender").setValue(self.gender)
-                        self.userRef.child("\(user!.uid)/point").setValue(0)
-                        self.login()
                     }
                 }
+                self.userRef.child("\(user!.uid)/name").setValue(self.nameField.text!)
+                self.userRef.child("\(user!.uid)/birthday").setValue(self.birthDayField.text!)
+                self.userRef.child("\(user!.uid)/gender").setValue(self.gender)
+                self.userRef.child("\(user!.uid)/point").setValue(0)
+                self.userRef.child("usernum").setValue(self.userNum + 1)
+                self.login()
                 self.registerButton.enabled = false
                 
                 
@@ -117,7 +120,9 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         passwordCheckField.delegate = self
         birthDayField.delegate = self
         imagePicker.delegate = self
-
+        userRef.child("usernum").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+            self.userNum = snap.value as! Int
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
