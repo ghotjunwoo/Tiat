@@ -7,22 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 class FriendViewController: UIViewController {
-    enum Friend {
-        case profileImage
-        case currentStatus
-        case statusColor
-        case name
-    }
-    var friends = [Friend]()
+    
+    let user = [User]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    func loadFriends () {
+        fetchUser()
         
     }
+    func fetchUser () {
+        FIRDatabase.database().reference().child("users").observeEventType(.ChildAdded, withBlock: {snapshot in
+        
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let user = User()
+                user.setValuesForKeysWithDictionary(dictionary)
+                print(user.name)
+                
+            }
+            print(snapshot)
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
