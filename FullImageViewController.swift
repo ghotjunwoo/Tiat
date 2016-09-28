@@ -25,10 +25,10 @@ class FullImageViewController: UIViewController {
     }
     
 
-    @IBAction func exportButtonClicked(sender: AnyObject) {
+    @IBAction func exportButtonClicked(_ sender: AnyObject) {
     }
-    @IBAction func trashButtonClicked(sender: AnyObject) {
+    @IBAction func trashButtonClicked(_ sender: AnyObject) {
     }
-    @IBAction func commentButtonClicked(sender: AnyObject) {
+    @IBAction func commentButtonClicked(_ sender: AnyObject) {
     }
 }

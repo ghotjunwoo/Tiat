@@ -5,9 +5,7 @@
   },
   "data" : [
     {
-      "idiom" : "universal",
-      "filename" : "user.pdf",
-      "universal-type-identifier" : "com.adobe.pdf"
+      "idiom" : "universal"
     }
   ]
 }

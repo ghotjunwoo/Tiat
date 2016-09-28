@@ -32,7 +32,7 @@ class HealthInputViewController: UIViewController {
 
 
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     override func didReceiveMemoryWarning() {
@@ -40,30 +40,30 @@ class HealthInputViewController: UIViewController {
 
     }
     
-    @IBAction func sleepValueChanged(sender: UISlider) {
+    @IBAction func sleepValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         sleepLabel.text = "\(Int(roundedValue))"
     }
     
-    @IBAction func excerciseValueChanged(sender: UISlider) {
+    @IBAction func excerciseValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         excerciseValueLabel.text = "\(Int(roundedValue))"
     }
 
-    @IBAction func diseaseValueChanged(sender: UISlider) {
+    @IBAction func diseaseValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         diseaseValueLabel.text = "\(Int(roundedValue))"
     }
 
-    @IBAction func hurtValueChanged(sender: UISlider) {
+    @IBAction func hurtValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         hurtValueLabel.text = "\(Int(roundedValue))"
     }
-    @IBAction func okSelected(sender: AnyObject) {
+    @IBAction func okSelected(_ sender: AnyObject) {
         let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
 
         healthRef.child("sleep").setValue(Int(sleepLabel.text!))
@@ -71,20 +71,20 @@ class HealthInputViewController: UIViewController {
         healthRef.child("disease").setValue(Int(diseaseValueLabel.text!))
         healthRef.child("hurt").setValue(Int(hurtValueLabel.text!))
         healthRef.child("detail").setValue(healthDetailField.text!)
-        performSegueWithIdentifier("toMeScreen", sender: self)
+        performSegue(withIdentifier: "toMeScreen", sender: self)
     }
     
-    @IBAction func verySickValueChange(sender: UISwitch) {
+    @IBAction func verySickValueChange(_ sender: UISwitch) {
         let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
-        if verySickSwitch.on {
+        if verySickSwitch.isOn {
             healthRef.child("conditions/verysick").setValue(true)
         } else {
             healthRef.child("conditions/verysick").setValue(false)
         }
     }
-    @IBAction func veryHealthyValueChanged(sender: UISwitch) {
+    @IBAction func veryHealthyValueChanged(_ sender: UISwitch) {
         let healthRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/health")
-        if verySickSwitch.on {
+        if verySickSwitch.isOn {
             healthRef.child("conditions/veryhealty").setValue(true)
         } else {
             healthRef.child("conditions/verysick").setValue(false)

@@ -28,7 +28,7 @@ class ProblemInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TestButton.multipleSelectionEnabled = true;
+        TestButton.isMultipleSelectionEnabled = true;
 
 
     }
@@ -37,12 +37,12 @@ class ProblemInputViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         detail.endEditing(true)
     }
     
-    @IBAction func markButtonSelected(radioButton : DLRadioButton) {
-        if (radioButton.multipleSelectionEnabled) {
+    @IBAction func markButtonSelected(_ radioButton : DLRadioButton) {
+        if (radioButton.isMultipleSelectionEnabled) {
             let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
 
             let testRef = userRef.child("currentdata/problem/test")
@@ -85,15 +85,15 @@ class ProblemInputViewController: UIViewController {
             }
         } else {
             
-            print(String(format: "%@ is selected.\n", radioButton.selectedButton()!.titleLabel!.text!));
+            print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
-    @IBAction func nextButtonTapped(sender: AnyObject) {
+    @IBAction func nextButtonTapped(_ sender: AnyObject) {
         print(detail.text!)
         let userRef = FIRDatabase.database().reference().child("users/\(user!.uid)")
         userRef.child("currentdata/problem/detail").setValue(detail.text!)
-        performSegueWithIdentifier("toInput_2", sender: self)
+        performSegue(withIdentifier: "toInput_2", sender: self)
     }
     
 }

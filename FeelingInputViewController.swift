@@ -24,7 +24,7 @@ class FeelingInputViewController: UIViewController {
     let user = FIRAuth.auth()?.currentUser
     let step: Float = 1
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -42,49 +42,49 @@ class FeelingInputViewController: UIViewController {
     }
     
     
-    @IBAction func happyValueChanged(sender: UISlider) {
+    @IBAction func happyValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         happyValueLabel.text = "\(Int(roundedValue))"
     }
-    @IBAction func sadValueChanged(sender: UISlider) {
+    @IBAction func sadValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         sadValueLabel.text = "\(Int(roundedValue))"
     }
-    @IBAction func lonleyValueChanged(sender: UISlider) {
+    @IBAction func lonleyValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         lonleyValueLabel.text = "\(Int(roundedValue))"
     }
-    @IBAction func angerValueChanged(sender: UISlider) {
+    @IBAction func angerValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         angerValueLabel.text = "\(Int(roundedValue))"
     }
-    @IBAction func loveValueChanged(sender: UISlider) {
+    @IBAction func loveValueChanged(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         loveValueLabel.text = "\(Int(roundedValue))"
     }
-    @IBAction func unrestValueChange(sender: UISlider) {
+    @IBAction func unrestValueChange(_ sender: UISlider) {
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
         unrestValueLabel.text = "\(Int(roundedValue))"
     }
-    @IBAction func doNotDisturbSwitchValueChanged(sender: UISwitch) {
+    @IBAction func doNotDisturbSwitchValueChanged(_ sender: UISwitch) {
         let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
 
-        if doNotDisturbSwitch.on {
+        if doNotDisturbSwitch.isOn {
             feelingRef.child("conditions/donotdisturb").setValue(true)
         } else {
             feelingRef.child("conditions/donotdisturb").setValue(false)
         }
     }
-    @IBAction func needsAttentionSwitchValueChanged(sender: UISwitch) {
+    @IBAction func needsAttentionSwitchValueChanged(_ sender: UISwitch) {
         let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
 
-        if needsAttentionSwitch.on {
+        if needsAttentionSwitch.isOn {
             feelingRef.child("conditions/needsattention").setValue(true)
         } else {
             feelingRef.child("conditions/needsattention").setValue(false)
@@ -92,7 +92,7 @@ class FeelingInputViewController: UIViewController {
     }
     
     
-    @IBAction func nextButtonTapped(sender: AnyObject) {
+    @IBAction func nextButtonTapped(_ sender: AnyObject) {
         let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
         feelingRef.child("happy").setValue(Int(happyValueLabel.text!))
         feelingRef.child("sad").setValue(Int(sadValueLabel.text!))
@@ -102,7 +102,7 @@ class FeelingInputViewController: UIViewController {
         feelingRef.child("unrest").setValue(Int(unrestValueLabel.text!))
 
         feelingRef.child("detail").setValue(feelingDetailField.text!)
-        performSegueWithIdentifier("toMainScreen_3", sender: self)
+        performSegue(withIdentifier: "toMainScreen_3", sender: self)
     }
     
     

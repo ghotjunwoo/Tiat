@@ -14,7 +14,7 @@ class publicAlbumViewController: UIViewController, UICollectionViewDataSource, U
 
     @IBOutlet var collectionView: UICollectionView!
     let imagePicker = UIImagePickerController()
-    let storageRef = FIRStorage.storage().referenceForURL("gs://tiat-ea6fd.appspot.com")
+    let storageRef = FIRStorage.storage().reference(forURL: "gs://tiat-ea6fd.appspot.com")
 
     var values = 1
     var imageArray:[UIImage] = [UIImage(named: "second")!]
@@ -23,16 +23,17 @@ class publicAlbumViewController: UIViewController, UICollectionViewDataSource, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let albumRef = FIRDatabase.database().reference().child("albumNum")
-        albumRef.observeEventType(.Value) { (snap: FIRDataSnapshot) in
-            print(snap.value as! Int)
+        let albumRef = FIRDatabase.database().reference().child("albumnum")
+        albumRef.observe(.value) { (snap: FIRDataSnapshot) in
+            print(snap.value)
+            
             self.values = snap.value as! Int
         }
         print(values)
-        let albumImageRef = FIRStorage.storage().referenceForURL("gs://tiat-ea6fd.appspot.com")
+        let albumImageRef = FIRStorage.storage().reference(forURL: "gs://tiat-ea6fd.appspot.com")
 .child("albumNum")
         for num in 1...values {
-            albumImageRef.child("\(num)").dataWithMaxSize(Int64.max, completion: {(data, error) in
+            albumImageRef.child("\(num)").data(withMaxSize: Int64.max, completion: {(data, error) in
                 if error == nil {
                     self.imageArray.append(UIImage(data: data!)!)
                     self.collectionView.reloadData()
@@ -48,26 +49,26 @@ class publicAlbumViewController: UIViewController, UICollectionViewDataSource, U
         super.didReceiveMemoryWarning()
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return values
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("publicAlbumCell", forIndexPath: indexPath) as! AlbumCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "publicAlbumCell", for: indexPath) as! AlbumCollectionViewCell
         
-        cell.imageView?.image = self.imageArray[indexPath.row]
+        cell.imageView?.image = self.imageArray[(indexPath as NSIndexPath).row]
         return cell
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let albumImageRef = FIRStorage.storage().referenceForURL("gs://tiat-ea6fd.appspot.com")
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let albumImageRef = FIRStorage.storage().reference(forURL: "gs://tiat-ea6fd.appspot.com")
             .child("albumNum")
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         let newImage = UIImageJPEGRepresentation(image, 3.0)
         self.metadata.contentType = "image/jpeg"
         print("\(values + 1)")
-        albumImageRef.child("\(values + 1)").putData(newImage!, metadata: self.metadata){metadata, error in
+        albumImageRef.child("\(values + 1)").put(newImage!, metadata: self.metadata){metadata, error in
             if error == nil {self.collectionView.reloadData()}
             else {print(error?.localizedDescription)}
             
@@ -75,11 +76,11 @@ class publicAlbumViewController: UIViewController, UICollectionViewDataSource, U
         
     }
     
-    @IBAction func plusButtonTapped(sender: AnyObject) {
+    @IBAction func plusButtonTapped(_ sender: AnyObject) {
         
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         imagePicker.mediaTypes = [kUTTypeImage as String]
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        self.present(imagePicker, animated: true, completion: nil)
         
     }
     

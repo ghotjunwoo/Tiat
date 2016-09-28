@@ -24,12 +24,12 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     //MARK: Declaration
     
-    let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.Default){(ACTION) in
+    let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){(ACTION) in
         print("B_T")}
     let userRef = FIRDatabase.database().reference().child("users")
     let user = FIRAuth.auth()?.currentUser
     let imagePicker = UIImagePickerController()
-    let storageRef = FIRStorage.storage().referenceForURL("gs://tiat-ea6fd.appspot.com")
+    let storageRef = FIRStorage.storage().reference(forURL: "gs://tiat-ea6fd.appspot.com")
     var userNum = 0
 
     var gender = "남"
@@ -37,26 +37,26 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var metadata = FIRStorageMetadata()
     
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == birthDayField {
             let datePicker = UIDatePicker()
-            datePicker.datePickerMode = UIDatePickerMode.Date
+            datePicker.datePickerMode = UIDatePickerMode.date
             textField.inputView = datePicker
-            datePicker.addTarget(self, action: #selector(CreateViewController.datePickerChanged(_:)), forControlEvents: .ValueChanged)
+            datePicker.addTarget(self, action: #selector(CreateViewController.datePickerChanged(_:)), for: .valueChanged)
         }
     }
     
     func login() {
-        FIRAuth.auth()?.signInWithEmail(emailField.text!, password: passwordField.text!, completion:{
+        FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion:{
             user, error in
             
             if error  != nil {
-                let incorrectAlert = UIAlertController(title: "실패", message: "이메일 또는 비밀번호가 일치하지 않습니다", preferredStyle: UIAlertControllerStyle.Alert);
+                let incorrectAlert = UIAlertController(title: "실패", message: "이메일 또는 비밀번호가 일치하지 않습니다", preferredStyle: UIAlertControllerStyle.alert);
                 incorrectAlert.addAction(self.okAction);
-                self.presentViewController(incorrectAlert, animated: true, completion: nil)
+                self.present(incorrectAlert, animated: true, completion: nil)
             } else {
                 print("Sucess")
-                self.performSegueWithIdentifier("toMainScreen_2", sender: self)
+                self.performSegue(withIdentifier: "toMainScreen_2", sender: self)
                 
             }
             
@@ -66,32 +66,32 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     
     func create() {
-        FIRAuth.auth()?.createUserWithEmail(emailField.text!, password: passwordField.text!, completion: {
+        FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!, completion: {
             user, error in
             
             if error != nil {
-                let duplAlert = UIAlertController(title: "실패", message: "오류가 발생했습니다", preferredStyle: UIAlertControllerStyle.Alert);
+                let duplAlert = UIAlertController(title: "실패", message: "오류가 발생했습니다", preferredStyle: UIAlertControllerStyle.alert);
                 print(error?.localizedDescription)
                 duplAlert.addAction(self.okAction);
-                self.presentViewController(duplAlert, animated: true, completion: nil)
+                self.present(duplAlert, animated: true, completion: nil)
             } else {
                 
                 let profileImageRef = self.storageRef.child("users/\(user!.uid)/profileimage")
                 self.metadata.contentType = "image/jpeg"
                 let newImage = UIImageJPEGRepresentation(self.profileImageView.image!, 3.0)
-                profileImageRef.putData(newImage!, metadata: self.metadata) { metadata, error in
+                profileImageRef.put(newImage!, metadata: self.metadata) { metadata, error in
                     
                     if error != nil {
                         
                     }
                 }
-                self.userRef.child("\(user!.uid)/name").setValue(self.nameField.text!)
-                self.userRef.child("\(user!.uid)/birthday").setValue(self.birthDayField.text!)
+                self.userRef.child("\(user!.uid)/name").setValue(self.nameField.text! as String)
+                self.userRef.child("\(user!.uid)/birthday").setValue(self.birthDayField.text! as String)
                 self.userRef.child("\(user!.uid)/gender").setValue(self.gender)
                 self.userRef.child("\(user!.uid)/point").setValue(0)
                 self.userRef.child("usernum").setValue(self.userNum + 1)
                 self.login()
-                self.registerButton.enabled = false
+                self.registerButton.isEnabled = false
                 
                 
                 
@@ -100,14 +100,14 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             }})
     }
     
-    func datePickerChanged(sender:UIDatePicker) {
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .FullStyle
-        birthDayField.text = formatter.stringFromDate(sender.date)
+    func datePickerChanged(_ sender:UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        birthDayField.text = formatter.string(from: sender.date)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.dismiss(animated: true, completion: nil)
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         profileImageView.image = image
     }
@@ -120,12 +120,12 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         passwordCheckField.delegate = self
         birthDayField.delegate = self
         imagePicker.delegate = self
-        userRef.child("usernum").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+        userRef.child("usernum").observe(.value) { (snap: FIRDataSnapshot) in
             self.userNum = snap.value as! Int
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 
@@ -134,37 +134,38 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
     }
     
-    @IBAction func nextKeyPressed(sender: AnyObject) {
+    @IBAction func nextKeyPressed(_ sender: AnyObject) {
         emailField.becomeFirstResponder()
     }
     
-    @IBAction func emailNextKeyPressed(sender: AnyObject) {
+    @IBAction func emailNextKeyPressed(_ sender: AnyObject) {
         passwordField.becomeFirstResponder()
     }
 
-    @IBAction func passwordNextKeyPressed(sender: AnyObject) {
+    @IBAction func passwordNextKeyPressed(_ sender: AnyObject) {
         passwordCheckField.becomeFirstResponder()
     }
 
-    @IBAction func registerButtonTapped(sender: AnyObject) {
+    @IBAction func registerButtonTapped(_ sender: AnyObject) {
         if passwordField.text == passwordCheckField.text {
             create()
-            performSegueWithIdentifier("toMainScreen_2", sender: self)
+            performSegue(withIdentifier: "toMainScreen_2", sender: self)
         } else {
-            let diffrentAlert = UIAlertController(title: "오류", message: "비밀번호와 비밀번호 확인이 일치하지 않습니다", preferredStyle: UIAlertControllerStyle.Alert)
+            let diffrentAlert = UIAlertController(title: "오류", message: "비밀번호와 비밀번호 확인이 일치하지 않습니다", preferredStyle: UIAlertControllerStyle.alert)
             diffrentAlert.addAction(okAction)
-            presentViewController(diffrentAlert, animated: true, completion: nil)
+            present(diffrentAlert, animated: true, completion: nil)
         }
     }
     
-    @IBAction func selectProfilePhoto(sender: AnyObject) {
+    @IBAction func selectProfilePhoto(_ sender: AnyObject) {
         
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         imagePicker.mediaTypes = [kUTTypeImage as String]
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func selectedValueChanged(sender: AnyObject) {
+
+    @IBAction func selectedValueChanged(_ sender: AnyObject) {
         switch genderControl.selectedSegmentIndex {
         case 0:
             gender = "남"

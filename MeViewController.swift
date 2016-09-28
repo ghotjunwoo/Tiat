@@ -36,6 +36,10 @@ class FirstViewController: UIViewController {
     @IBOutlet var hurtCircleGraph: CircleGraphView!
     @IBOutlet var circleGraphView1: UIView!
     @IBOutlet var circleGraphView2: UIView!
+    @IBOutlet weak var happyButton: UIButton!
+    @IBOutlet weak var sadButton: UIButton!
+    @IBOutlet weak var lonleyButton: UIButton!
+    @IBOutlet weak var angryButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,27 +50,29 @@ class FirstViewController: UIViewController {
             let token = FIRInstanceID.instanceID().token()!
             
             print(userRef.child("name"))
-            userRef.child("name").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                self.nameLabel.text = snap.value?.description
+            userRef.child("name").observe(.value) { (snap: FIRDataSnapshot) in
+                self.nameLabel.text = (snap.value as! String).description
             }
-            userRef.child("birthday").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                self.birthDayLabel.text = snap.value?.description
+            userRef.child("birthday").observe(.value) { (snap: FIRDataSnapshot) in
+                self.birthDayLabel.text = (snap.value as! String).description
             }
-            userRef.child("gender").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                self.genderLabel.text = snap.value?.description
+            userRef.child("gender").observe(.value) { (snap: FIRDataSnapshot) in
+                self.genderLabel.text = (snap.value as! String).description
             }
-            userRef.child("point").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                self.pointLabel.text = snap.value?.description
+            userRef.child("point").observe(.value) { (snap: FIRDataSnapshot) in
+                self.pointLabel.text = snap.value as? String
             }
-            dataRef.child("feeling/detail").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                self.statusLabel.text = snap.value?.description
+            dataRef.child("feeling/detail").observe(.value) { (snap: FIRDataSnapshot) in
+                self.statusLabel.text = (snap.value as! String).description
             }
-            dataRef.child("health/detail").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                self.healthStatus.text = snap.value?.description
+            dataRef.child("health/detail").observe(.value) { (snap: FIRDataSnapshot) in
+                self.healthStatus.text
+                    = (snap.value as! String).description
+                
                 
             }
             
-            storageRef.dataWithMaxSize(1 * 7168 * 7168) { (data, error) -> Void in
+            storageRef.data(withMaxSize: 1 * 7168 * 7168) { (data, error) -> Void in
                 if (error != nil) {
                 } else {
                     self.profileImageView.image = UIImage(data: data!)
@@ -75,94 +81,94 @@ class FirstViewController: UIViewController {
             print("Sucessfully Signed in")
             print(token)
             self.profileInformation.layer.borderWidth = 1
-            self.profileInformation.layer.borderColor = UIColor.blackColor().CGColor
-            self.profileInformation.layer.cornerRadius = CGRectGetWidth(self.profileInformation.frame)/12
+            self.profileInformation.layer.borderColor = UIColor.black.cgColor
+            self.profileInformation.layer.cornerRadius = self.profileInformation.frame.width/12
             self.profileInformation.layer.masksToBounds = true
             self.feelingHealthInformation.layer.borderWidth = 1
-            self.feelingHealthInformation.layer.borderColor = UIColor.blueColor().CGColor
-            self.feelingHealthInformation.layer.cornerRadius = CGRectGetWidth(self.feelingHealthInformation.frame)/12
+            self.feelingHealthInformation.layer.borderColor = UIColor.blue.cgColor
+            self.feelingHealthInformation.layer.cornerRadius = self.feelingHealthInformation.frame.width/12
             self.feelingHealthInformation.layer.masksToBounds = true
             self.circleGraphView1.layer.borderWidth = 1
-            self.circleGraphView1.layer.borderColor = UIColor.lightGrayColor().CGColor
-            self.circleGraphView1.layer.cornerRadius = CGRectGetWidth(self.feelingHealthInformation.frame)/12
+            self.circleGraphView1.layer.borderColor = UIColor.lightGray.cgColor
+            self.circleGraphView1.layer.cornerRadius = self.feelingHealthInformation.frame.width/12
             self.circleGraphView2.layer.masksToBounds = true
             self.circleGraphView2.layer.borderWidth = 1
-            self.circleGraphView2.layer.borderColor = UIColor.lightGrayColor().CGColor
-            self.circleGraphView2.layer.cornerRadius = CGRectGetWidth(self.feelingHealthInformation.frame)/12
+            self.circleGraphView2.layer.borderColor = UIColor.lightGray.cgColor
+            self.circleGraphView2.layer.cornerRadius = self.feelingHealthInformation.frame.width/12
             self.circleGraphView2.layer.masksToBounds = true
             self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
             self.profileImageView.layer.masksToBounds = true
 
 
-            sadCircleGraph.arcColor = UIColor.blueColor()
-            lonleyCircleCraph.arcColor = UIColor.grayColor()
-            angryCircleGraph.arcColor = UIColor.purpleColor()
-            loveCircleGraph.arcColor = UIColor.magentaColor()
-            unrestCircleGraph.arcColor = UIColor.greenColor()
-            sleepCircleGraph.arcColor = UIColor.darkGrayColor()
+            sadCircleGraph.arcColor = UIColor.blue
+            lonleyCircleCraph.arcColor = UIColor.gray
+            angryCircleGraph.arcColor = UIColor.purple
+            loveCircleGraph.arcColor = UIColor.magenta
+            unrestCircleGraph.arcColor = UIColor.green
+            sleepCircleGraph.arcColor = UIColor.darkGray
             excerciseCircleGraphView.arcColor = UIColor(red:0.00, green:0.39, blue:0.00, alpha:1.0)
-            diseaseCircleGraph.arcColor = UIColor.brownColor()
-            hurtCircleGraph.arcColor = UIColor.purpleColor()
+            diseaseCircleGraph.arcColor = UIColor.brown
+            hurtCircleGraph.arcColor = UIColor.purple
         }
 
         
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if let user = FIRAuth.auth()?.currentUser {
 
             let feelingRef = FIRDatabase.database().reference().child("users/\(user.uid)/currentdata/feeling")
             let healthRef = FIRDatabase.database().reference().child("users/\(user.uid)/currentdata/health")
-            feelingRef.child("conditions/donotdisturb").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                if snap.value?.description == "1" {
+            feelingRef.child("conditions/donotdisturb").observe(.value) { (snap: FIRDataSnapshot) in
+                if (snap.value as AnyObject).description == "1" {
                  self.conditionLabel.text = "방해금지"
                 }
             }
-            feelingRef.child("conditions/needsattention").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                if (snap.value?.description)! == "1" {
+            feelingRef.child("conditions/needsattention").observe(.value) { (snap: FIRDataSnapshot) in
+                if ((snap.value as AnyObject).description)! == "1" {
                     self.conditionLabel.text = "관심필요"
                 }
             }
-            healthRef.child("conditions/verysick").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                if (snap.value?.description)! == "1" {
+            healthRef.child("conditions/verysick").observe(.value) { (snap: FIRDataSnapshot) in
+                if ((snap.value as AnyObject).description)! == "1" {
                     self.healthConditionLabel.text = "매우아픔"
                 }
             }
-            healthRef.child("conditions/veryhealthy").observeEventType(.Value) { (snap: FIRDataSnapshot) in
-                if (snap.value?.description)! == "1" {
+            healthRef.child("conditions/veryhealthy").observe(.value) { (snap: FIRDataSnapshot) in
+                if ((snap.value as AnyObject).description)! == "1" {
                     self.healthConditionLabel.text = "매우 건강함"
                 }
             }
-            feelingRef.child("detail").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+            feelingRef.child("detail").observe(.value) { (snap: FIRDataSnapshot) in
                 self.statusLabel.text = snap.value as? String
             }
             
-            feelingRef.child("happy").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+            feelingRef.child("happy").observe(.value) { (snap: FIRDataSnapshot) in
                 if snap.value! is NSNull {
                     
                 } else {
                     let happyValue = snap.value as! Float / 5
                     self.circleGraph.endArc = CGFloat(happyValue)
-                    feelingRef.child("sad").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    feelingRef.child("sad").observe(.value) { (snap: FIRDataSnapshot) in
                         let sadValue = snap.value as! Float / 5
                         self.sadCircleGraph.endArc = CGFloat(sadValue)
                         
                     }
-                    feelingRef.child("lonley").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    feelingRef.child("lonley").observe(.value) { (snap: FIRDataSnapshot) in
                         let lonleyValue = snap.value as! Float / 5
                         self.lonleyCircleCraph.endArc = CGFloat(lonleyValue)
                         
                     }
-                    feelingRef.child("anger").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    feelingRef.child("anger").observe(.value) { (snap: FIRDataSnapshot) in
                         let angerValue = snap.value as! Float / 5
                         self.angryCircleGraph.endArc = CGFloat(angerValue)
                         
                     }
-                    feelingRef.child("love").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    feelingRef.child("love").observe(.value) { (snap: FIRDataSnapshot) in
                         let loveValue = snap.value as! Float / 5
                         self.loveCircleGraph.endArc = CGFloat(loveValue)
                         
                     }
-                    feelingRef.child("unrest").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    feelingRef.child("unrest").observe(.value) { (snap: FIRDataSnapshot) in
                         let unrestValue = snap.value as! Float / 5
                         self.unrestCircleGraph.endArc = CGFloat(unrestValue)
                         
@@ -171,21 +177,21 @@ class FirstViewController: UIViewController {
                 }
                 
             }
-            healthRef.child("sleep").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+            healthRef.child("sleep").observe(.value) { (snap: FIRDataSnapshot) in
                 if snap.value! is NSNull {} else {
                     let sleepValue = snap.value as! Float / 5
                     self.sleepCircleGraph.endArc = CGFloat(sleepValue)
-                    healthRef.child("excercise").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    healthRef.child("excercise").observe(.value) { (snap: FIRDataSnapshot) in
                         let Value = snap.value as! Float / 5
                         self.excerciseCircleGraphView.endArc = CGFloat(Value)
                         
                     }
-                    healthRef.child("disease").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    healthRef.child("disease").observe(.value) { (snap: FIRDataSnapshot) in
                         let Value = snap.value as! Float / 5
                         self.diseaseCircleGraph.endArc = CGFloat(Value)
                         
                     }
-                    healthRef.child("hurt").observeEventType(.Value) { (snap: FIRDataSnapshot) in
+                    healthRef.child("hurt").observe(.value) { (snap: FIRDataSnapshot) in
                         let Value = snap.value as! Float / 5
                         self.hurtCircleGraph.endArc = CGFloat(Value)
                         
@@ -201,9 +207,9 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    @IBAction func logOutTriggerd(sender: AnyObject) {
+    @IBAction func logOutTriggerd(_ sender: AnyObject) {
         try! FIRAuth.auth()!.signOut()
-        performSegueWithIdentifier("logoutSegue", sender: self)
+        performSegue(withIdentifier: "logoutSegue", sender: self)
     }
 
 
