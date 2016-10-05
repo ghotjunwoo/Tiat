@@ -20,6 +20,12 @@ class FeelingInputViewController: UIViewController {
     @IBOutlet var unrestValueLabel: UILabel!
     @IBOutlet var doNotDisturbSwitch: UISwitch!
     @IBOutlet var needsAttentionSwitch: UISwitch!
+    @IBOutlet var happySlider: UISlider!
+    @IBOutlet var sadSlider: UISlider!
+    @IBOutlet var lonleySlider: UISlider!
+    @IBOutlet var angerSlider: UISlider!
+    @IBOutlet var loveSlider: UISlider!
+    @IBOutlet var unrestSlider: UISlider!
     
     let user = FIRAuth.auth()?.currentUser
     let step: Float = 1
@@ -31,7 +37,32 @@ class FeelingInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let feelingRef = FIRDatabase.database().reference().child("users/\(user!.uid)/currentdata/feeling")
-
+        feelingRef.child("happy").observe(.value) { (snap: FIRDataSnapshot) in
+            if snap.value is NSNull {} else {
+                self.happySlider.value = snap.value as! Float
+                self.happyValueLabel.text = snap.value as? String
+                feelingRef.child("sad").observe(.value, with: { (snap: FIRDataSnapshot) in
+                    self.sadSlider.value = snap.value as! Float
+                    self.sadValueLabel.text = (snap.value as? String)?.description
+                })
+                feelingRef.child("love").observe(.value, with: { (snap: FIRDataSnapshot) in
+                    self.loveSlider.value = snap.value as! Float
+                    self.loveValueLabel.text = (snap.value as? String)?.description
+                })
+                feelingRef.child("anger").observe(.value, with: { (snap: FIRDataSnapshot) in
+                    self.angerSlider.value = snap.value as! Float
+                    self.angerValueLabel.text = (snap.value as? String)?.description
+                })
+                feelingRef.child("lonley").observe(.value, with: { (snap: FIRDataSnapshot) in
+                    self.lonleySlider.value = snap.value as! Float
+                    self.lonleyValueLabel.text = (snap.value as? String)?.description
+                })
+                feelingRef.child("unrest").observe(.value, with: { (snap: FIRDataSnapshot) in
+                    self.unrestSlider.value = snap.value as! Float
+                    self.unrestValueLabel.text = (snap.value as? String)?.description
+                })
+            }
+        }
         feelingRef.child("conditions/donotdisturb").setValue(false)
         feelingRef.child("conditions/needsattention").setValue(false)
     }

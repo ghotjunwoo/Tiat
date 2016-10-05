@@ -15,11 +15,10 @@ class FirstViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var pointLabel: UILabel!
-    @IBOutlet var birthDayLabel: UILabel!
-    @IBOutlet var genderLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var conditionLabel: UILabel!
     @IBOutlet var healthConditionLabel: UILabel!
+    @IBOutlet var problemLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var profileInformation: UIView!
     @IBOutlet var feelingHealthInformation: UIView!
@@ -53,24 +52,21 @@ class FirstViewController: UIViewController {
             userRef.child("name").observe(.value) { (snap: FIRDataSnapshot) in
                 self.nameLabel.text = (snap.value as! String).description
             }
-            userRef.child("birthday").observe(.value) { (snap: FIRDataSnapshot) in
-                self.birthDayLabel.text = (snap.value as! String).description
-            }
-            userRef.child("gender").observe(.value) { (snap: FIRDataSnapshot) in
-                self.genderLabel.text = (snap.value as! String).description
-            }
             userRef.child("point").observe(.value) { (snap: FIRDataSnapshot) in
                 self.pointLabel.text = snap.value as? String
             }
             dataRef.child("feeling/detail").observe(.value) { (snap: FIRDataSnapshot) in
-                self.statusLabel.text = (snap.value as! String).description
+                if snap.value is NSNull {} else {
+                    self.statusLabel.text = (snap.value as! String).description
+                    dataRef.child("health/detail").observe(.value) { (snap: FIRDataSnapshot) in
+                        if snap.value is NSNull {} else {
+                        self.healthStatus.text
+                            = (snap.value as! String).description
+                        }
+                    }
+                }
             }
-            dataRef.child("health/detail").observe(.value) { (snap: FIRDataSnapshot) in
-                self.healthStatus.text
-                    = (snap.value as! String).description
-                
-                
-            }
+
             
             storageRef.data(withMaxSize: 1 * 7168 * 7168) { (data, error) -> Void in
                 if (error != nil) {
@@ -80,14 +76,6 @@ class FirstViewController: UIViewController {
             }
             print("Sucessfully Signed in")
             print(token)
-            self.profileInformation.layer.borderWidth = 1
-            self.profileInformation.layer.borderColor = UIColor.black.cgColor
-            self.profileInformation.layer.cornerRadius = self.profileInformation.frame.width/12
-            self.profileInformation.layer.masksToBounds = true
-            self.feelingHealthInformation.layer.borderWidth = 1
-            self.feelingHealthInformation.layer.borderColor = UIColor.blue.cgColor
-            self.feelingHealthInformation.layer.cornerRadius = self.feelingHealthInformation.frame.width/12
-            self.feelingHealthInformation.layer.masksToBounds = true
             self.circleGraphView1.layer.borderWidth = 1
             self.circleGraphView1.layer.borderColor = UIColor.lightGray.cgColor
             self.circleGraphView1.layer.cornerRadius = self.feelingHealthInformation.frame.width/12
@@ -119,25 +107,33 @@ class FirstViewController: UIViewController {
             let feelingRef = FIRDatabase.database().reference().child("users/\(user.uid)/currentdata/feeling")
             let healthRef = FIRDatabase.database().reference().child("users/\(user.uid)/currentdata/health")
             feelingRef.child("conditions/donotdisturb").observe(.value) { (snap: FIRDataSnapshot) in
-                if (snap.value as AnyObject).description == "1" {
-                 self.conditionLabel.text = "방해금지"
+                if snap.value is NSNull {} else {
+                    if snap.value as! Bool == true {
+                        self.conditionLabel.text = "방해금지"
+                    }
+                    feelingRef.child("conditions/needsattention").observe(.value) { (snap: FIRDataSnapshot) in
+                        if snap.value as! Bool == true {
+                            self.conditionLabel.text = "관심필요"
+                        }
+                    }
+                    
+                    healthRef.child("conditions/verysick").observe(.value) { (snap: FIRDataSnapshot) in
+                        if snap.value is NSNull {} else {
+
+                        if snap.value as! Bool == true {
+                            self.healthConditionLabel.text = "매우아픔"
+                            healthRef.child("conditions/veryhealthy").observe(.value) { (snap: FIRDataSnapshot) in
+                                if snap.value as! Bool == true {
+                                    self.healthConditionLabel.text = "매우 건강함"
+                                }                    }
+                            }
+                        }
+                    }
+                    
                 }
+                
             }
-            feelingRef.child("conditions/needsattention").observe(.value) { (snap: FIRDataSnapshot) in
-                if ((snap.value as AnyObject).description)! == "1" {
-                    self.conditionLabel.text = "관심필요"
-                }
-            }
-            healthRef.child("conditions/verysick").observe(.value) { (snap: FIRDataSnapshot) in
-                if ((snap.value as AnyObject).description)! == "1" {
-                    self.healthConditionLabel.text = "매우아픔"
-                }
-            }
-            healthRef.child("conditions/veryhealthy").observe(.value) { (snap: FIRDataSnapshot) in
-                if ((snap.value as AnyObject).description)! == "1" {
-                    self.healthConditionLabel.text = "매우 건강함"
-                }
-            }
+            
             feelingRef.child("detail").observe(.value) { (snap: FIRDataSnapshot) in
                 self.statusLabel.text = snap.value as? String
             }
@@ -173,6 +169,9 @@ class FirstViewController: UIViewController {
                         self.unrestCircleGraph.endArc = CGFloat(unrestValue)
                         
                     }
+                    feelingRef.child("detail").observe(.value, with: { (snap: FIRDataSnapshot) in
+                        self.statusLabel.text = snap.value as? String
+                    })
                     
                 }
                 
@@ -196,11 +195,17 @@ class FirstViewController: UIViewController {
                         self.hurtCircleGraph.endArc = CGFloat(Value)
                         
                     }
+                    healthRef.child("detail").observe(.value, with: { (snap: FIRDataSnapshot) in
+                        self.healthStatus.text = snap.value as? String
+                    })
 
                 }
 
                 
             }
+            FIRDatabase.database().reference().child("users/\(user.uid)/currentdata/problem").observe(.value, with: { (snap: FIRDataSnapshot) in
+                self.problemLabel.text = snap.value as? String
+            })
             
                     }
     }

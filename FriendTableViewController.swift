@@ -18,6 +18,8 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
     var users = [User]()
     var keys = [String]()
     let cellId = "friendsCell"
+    var friendUid = ""
+    var friendName = ""
     var downloadURL: URL = NSURL(string: "") as! URL
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -74,7 +76,19 @@ class FriendTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        friendUid = keys[indexPath.row]
+        friendName = users[indexPath.row].name!
+        performSegue(withIdentifier: "toDetailView", sender: self)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailView" {
+            let destinationViewController = segue.destination as! FriendDetailViewController
+            destinationViewController.friendUid = friendUid
+            destinationViewController.friendName = friendName
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

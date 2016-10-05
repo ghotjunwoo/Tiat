@@ -16,9 +16,6 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
-    @IBOutlet var passwordCheckField: UITextField!
-    @IBOutlet var birthDayField: UITextField!
-    @IBOutlet var genderControl: UISegmentedControl!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var registerButton: UIButton!
     
@@ -35,35 +32,6 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var gender = "남"
     var image:UIImage = UIImage(named: "status_green")!
     var metadata = FIRStorageMetadata()
-    
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == birthDayField {
-            let datePicker = UIDatePicker()
-            datePicker.datePickerMode = UIDatePickerMode.date
-            textField.inputView = datePicker
-            datePicker.addTarget(self, action: #selector(CreateViewController.datePickerChanged(_:)), for: .valueChanged)
-        }
-    }
-    
-    func login() {
-        FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion:{
-            user, error in
-            
-            if error  != nil {
-                let incorrectAlert = UIAlertController(title: "실패", message: "이메일 또는 비밀번호가 일치하지 않습니다", preferredStyle: UIAlertControllerStyle.alert);
-                incorrectAlert.addAction(self.okAction);
-                self.present(incorrectAlert, animated: true, completion: nil)
-            } else {
-                print("Sucess")
-                self.performSegue(withIdentifier: "toMainScreen_2", sender: self)
-                
-            }
-            
-        })
-    }
-    
-    
     
     func create() {
         FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!, completion: {
@@ -86,25 +54,13 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                     }
                 }
                 self.userRef.child("\(user!.uid)/name").setValue(self.nameField.text! as String)
-                self.userRef.child("\(user!.uid)/birthday").setValue(self.birthDayField.text! as String)
-                self.userRef.child("\(user!.uid)/gender").setValue(self.gender)
                 self.userRef.child("\(user!.uid)/point").setValue(0)
-                self.userRef.child("usernum").setValue(self.userNum + 1)
-                self.login()
                 self.registerButton.isEnabled = false
-                
-                
-                
-                
                 
             }})
     }
     
-    func datePickerChanged(_ sender:UIDatePicker) {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        birthDayField.text = formatter.string(from: sender.date)
-    }
+
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         self.dismiss(animated: true, completion: nil)
@@ -117,8 +73,6 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         nameField.delegate = self
         emailField.delegate = self
         passwordField.delegate = self
-        passwordCheckField.delegate = self
-        birthDayField.delegate = self
         imagePicker.delegate = self
         userRef.child("usernum").observe(.value) { (snap: FIRDataSnapshot) in
             self.userNum = snap.value as! Int
@@ -143,39 +97,20 @@ class CreateViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
 
     @IBAction func passwordNextKeyPressed(_ sender: AnyObject) {
-        passwordCheckField.becomeFirstResponder()
+        create()
+        performSegue(withIdentifier: "toMainScreen_2", sender: self)
     }
 
     @IBAction func registerButtonTapped(_ sender: AnyObject) {
-        if passwordField.text == passwordCheckField.text {
             create()
             performSegue(withIdentifier: "toMainScreen_2", sender: self)
-        } else {
-            let diffrentAlert = UIAlertController(title: "오류", message: "비밀번호와 비밀번호 확인이 일치하지 않습니다", preferredStyle: UIAlertControllerStyle.alert)
-            diffrentAlert.addAction(okAction)
-            present(diffrentAlert, animated: true, completion: nil)
-        }
     }
     
     @IBAction func selectProfilePhoto(_ sender: AnyObject) {
-        
         imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         imagePicker.mediaTypes = [kUTTypeImage as String]
         self.present(imagePicker, animated: true, completion: nil)
     }
     
 
-    @IBAction func selectedValueChanged(_ sender: AnyObject) {
-        switch genderControl.selectedSegmentIndex {
-        case 0:
-            gender = "남"
-        case 1:
-            gender = "여"
-        case 2:
-            gender = "기타"
-        default:
-            break;
-        }
-    }
-    
 }

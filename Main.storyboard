@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,7 +32,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkd-tY-Kz6">
-                                        <frame key="frameInset" minX="283" minY="8" width="52" height="22"/>
+                                        <frame key="frameInset" minX="283" minY="20" width="52" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="정보수정"/>
                                         <connections>
@@ -131,23 +130,9 @@
                                                                 <frame key="frameInset" minX="13" minY="12" width="113" height="113"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsE-oK-YiG" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIM-i2-jm7" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
                                                                         <frame key="frameInset" minX="13" minY="13" width="87" height="87"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <subviews>
-                                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-WK-HgT" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
-                                                                                <frame key="frameInset" minX="11" minY="11" width="65" height="65"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                <subviews>
-                                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDD-tc-2UL" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
-                                                                                        <frame key="frameInset" minX="9" minY="10" width="46" height="46"/>
-                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                    </view>
-                                                                                </subviews>
-                                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            </view>
-                                                                        </subviews>
                                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </view>
                                                                 </subviews>
@@ -257,30 +242,16 @@
                                         <frame key="frameInset" minX="9" minY="69" width="94" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyW-Ke-Amj">
-                                        <frame key="frameInset" minX="282" minY="91" width="42" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLx-wa-kEe">
-                                        <frame key="frameInset" minX="282" minY="5" width="53" height="30"/>
+                                        <frame key="frameInset" minX="282" minY="26" width="53" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="로그아웃"/>
                                         <connections>
                                             <action selector="logOutTriggerd:" destination="9pv-A4-QxB" eventType="touchUpInside" id="cFx-Wt-AkO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[생년월일]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z38-5a-WXC" userLabel="BirthLabel">
-                                        <frame key="frameInset" minX="122" minY="141" width="221" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[포인트]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-JW-u0Q" userLabel="PointLabel">
-                                        <frame key="frameInset" minX="122" minY="81" width="172" height="22"/>
+                                        <frame key="frameInset" minX="131" minY="141" width="172" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -288,6 +259,21 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNJ-UT-UG1">
+                                <frame key="frameInset" minX="16" minY="78" width="359" height="0.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlC-Uv-Pc8">
+                                <frame key="frameInset" minX="16" minY="202" width="359" height="0.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ox4-W2-tIt">
+                                <frame key="frameInset" minX="16" minY="264" width="359" height="0.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -297,7 +283,6 @@
                     <connections>
                         <outlet property="angryButton" destination="BQT-vz-71J" id="a5x-Sj-vIM"/>
                         <outlet property="angryCircleGraph" destination="c5w-B6-x2y" id="24X-Sf-XN9"/>
-                        <outlet property="birthDayLabel" destination="z38-5a-WXC" id="a3F-ob-Uo3"/>
                         <outlet property="circleGraph" destination="a88-Ob-fHh" id="xUa-NW-KS2"/>
                         <outlet property="circleGraphView1" destination="0Es-eU-GDI" id="Zxv-eD-8Ro"/>
                         <outlet property="circleGraphView2" destination="eee-I9-3fp" id="Qal-b2-d0x"/>
@@ -305,16 +290,16 @@
                         <outlet property="diseaseCircleGraph" destination="XJb-qi-tHV" id="ocy-Ub-Xqw"/>
                         <outlet property="excerciseCircleGraphView" destination="wd2-GO-6Y1" id="fIu-ir-GKQ"/>
                         <outlet property="feelingHealthInformation" destination="jou-z1-V6u" id="9un-CF-o0q"/>
-                        <outlet property="genderLabel" destination="UyW-Ke-Amj" id="qrS-Np-n1W"/>
                         <outlet property="happyButton" destination="Mek-no-4uj" id="Tjg-Ky-njY"/>
                         <outlet property="healthConditionLabel" destination="zc0-Lf-eQt" id="vya-HG-34e"/>
                         <outlet property="healthStatus" destination="tVE-hF-R5o" id="VWU-c9-B0m"/>
-                        <outlet property="hurtCircleGraph" destination="xsE-oK-YiG" id="u2r-y0-3X5"/>
+                        <outlet property="hurtCircleGraph" destination="mIM-i2-jm7" id="kgr-BX-ueU"/>
                         <outlet property="lonleyButton" destination="3dp-DS-oj1" id="w9a-NT-ROG"/>
                         <outlet property="lonleyCircleCraph" destination="vlV-1D-jnN" id="gQw-2F-TIh"/>
                         <outlet property="loveCircleGraph" destination="T8d-Fs-6de" id="t8J-dP-2hT"/>
                         <outlet property="nameLabel" destination="i6V-dL-k1z" id="GOR-ZZ-rAw"/>
                         <outlet property="pointLabel" destination="vLX-JW-u0Q" id="peb-fT-icd"/>
+                        <outlet property="problemLabel" destination="OCg-iO-gaA" id="ecd-fB-QoV"/>
                         <outlet property="profileImageView" destination="mtI-S3-Fxy" id="Zcf-YK-ZUy"/>
                         <outlet property="profileInformation" destination="9jw-1E-y4r" id="uZi-Wv-3Vf"/>
                         <outlet property="sadButton" destination="foX-W2-JUK" id="wvy-6a-A93"/>
@@ -327,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770.5" y="-227.5"/>
+            <point key="canvasLocation" x="688" y="-269"/>
         </scene>
         <!--Input1-->
         <scene sceneID="eFC-ah-lM8">
@@ -342,7 +327,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-UB-Vae" userLabel="ProblemInputView">
-                                <frame key="frameInset" minX="20" minY="43" width="335" height="581"/>
+                                <frame key="frameInset" minX="20" minY="37" width="335" height="581"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-OQ-cft" customClass="DLRadioButton">
@@ -380,7 +365,6 @@
                                             <outletCollection property="otherButtons" destination="JRy-i9-Df2" id="GLk-YP-EJJ"/>
                                             <outletCollection property="otherButtons" destination="2pz-BS-4fa" id="eCC-lR-YJg"/>
                                             <outletCollection property="otherButtons" destination="85q-2f-PV7" id="l2i-UE-yJZ"/>
-                                            <outletCollection property="otherButtons" destination="BNx-tW-AHd" id="nLH-Y9-p6O"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-N3-1Gr" userLabel="Health Button" customClass="DLRadioButton">
@@ -414,14 +398,8 @@
                                             <action selector="markButtonSelected:" destination="IGr-j5-hln" eventType="touchUpInside" id="ycI-qy-bhR"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="자세히..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ce-x6-Cdt" userLabel="Detail">
-                                        <frame key="frameInset" minX="63" minY="127" width="210" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85q-2f-PV7" userLabel="Friend Button" customClass="DLRadioButton">
-                                        <frame key="frameInset" minX="62" minY="396" width="85" height="30"/>
+                                        <frame key="frameInset" minX="125" minY="396" width="85" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="친구">
@@ -544,37 +522,6 @@
                                             <action selector="markButtonSelected:" destination="IGr-j5-hln" eventType="touchUpInside" id="fuc-g4-TLM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNx-tW-AHd" userLabel="Other Button" customClass="DLRadioButton">
-                                        <frame key="frameInset" minX="187" minY="396" width="85" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="기타">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="iconSize">
-                                                <real key="value" value="18"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="marginWidth">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="iconStrokeWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="indicatorSize">
-                                                <real key="value" value="9"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="markButtonSelected:" destination="IGr-j5-hln" eventType="touchUpInside" id="S0F-RY-O5m"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRy-i9-Df2" userLabel="Dream Button" customClass="DLRadioButton">
                                         <frame key="frameInset" minX="62" minY="330" width="85" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -624,9 +571,7 @@
                     <connections>
                         <outlet property="TestButton" destination="b8y-OQ-cft" id="FsQ-bc-tVo"/>
                         <outlet property="appearanceButton" destination="IQp-ST-NpD" id="bNX-TX-pGF"/>
-                        <outlet property="detail" destination="8ce-x6-Cdt" id="iPy-DH-LFo"/>
                         <outlet property="dreamButton" destination="JRy-i9-Df2" id="beh-IO-dH4"/>
-                        <outlet property="exc" destination="BNx-tW-AHd" id="R4d-zs-h10"/>
                         <outlet property="friendButton" destination="85q-2f-PV7" id="xko-hG-8NO"/>
                         <outlet property="healthButton" destination="5jH-N3-1Gr" id="qB3-x3-0rV"/>
                         <outlet property="loveButton" destination="gw1-Rt-kdF" id="mjo-J3-GKn"/>
@@ -834,14 +779,20 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="angerSlider" destination="WPh-S7-VUy" id="s2b-tP-V2x"/>
                         <outlet property="angerValueLabel" destination="FyH-dM-Emj" id="ehM-hT-G6q"/>
                         <outlet property="doNotDisturbSwitch" destination="HPj-16-GFl" id="Evk-Uu-zvm"/>
                         <outlet property="feelingDetailField" destination="Nnq-qU-OVf" id="zT5-Hc-ZF7"/>
+                        <outlet property="happySlider" destination="Grl-Hx-vSF" id="9CD-ZR-7Xq"/>
                         <outlet property="happyValueLabel" destination="rVn-ZC-afA" id="ngJ-ZM-ahp"/>
+                        <outlet property="lonleySlider" destination="1Ag-Fg-KY2" id="e9e-3m-dEa"/>
                         <outlet property="lonleyValueLabel" destination="i9i-7Q-1Of" id="2jn-ka-utg"/>
+                        <outlet property="loveSlider" destination="wJG-A9-KAt" id="ygN-TH-sl6"/>
                         <outlet property="loveValueLabel" destination="3j4-oJ-uvY" id="uCO-7L-3xS"/>
                         <outlet property="needsAttentionSwitch" destination="4Ht-Ey-el3" id="U9U-LE-e8y"/>
+                        <outlet property="sadSlider" destination="kW0-L5-kHl" id="eJi-jg-NKd"/>
                         <outlet property="sadValueLabel" destination="DG6-hR-daz" id="vKp-o3-fkC"/>
+                        <outlet property="unrestSlider" destination="idJ-bA-KSr" id="yUa-VY-WTn"/>
                         <outlet property="unrestValueLabel" destination="qYo-qg-ESH" id="J4X-k9-vxE"/>
                         <segue destination="Fze-nf-6PK" kind="push" identifier="toMainScreen_3" id="stg-VO-lHQ"/>
                     </connections>
@@ -1194,7 +1145,6 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="TYU-RR-fPy" id="BeL-67-egF"/>
                                             <outlet property="profileImage" destination="rzW-po-b25" id="BFQ-qb-4cg"/>
-                                            <segue destination="YmA-Ba-rn5" kind="push" id="bLw-7S-iat"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1212,6 +1162,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9uQ-He-ZDC" id="3OQ-tg-bEt"/>
+                        <segue destination="YmA-Ba-rn5" kind="push" identifier="toDetailView" id="gH5-es-y6w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -1221,7 +1172,7 @@
         <!--Title-->
         <scene sceneID="Ile-Pz-QMa">
             <objects>
-                <viewController id="YmA-Ba-rn5" sceneMemberID="viewController">
+                <viewController id="YmA-Ba-rn5" customClass="FriendDetailViewController" customModule="Tiat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YcL-hb-j6i"/>
                         <viewControllerLayoutGuide type="bottom" id="F92-cR-RgF"/>
@@ -1230,37 +1181,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HeD-E9-eeO">
-                                <frame key="frameInset" minX="76" minY="72" width="223" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="정서"/>
-                                    <segment title="신체"/>
-                                </segments>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlz-K2-Tug" userLabel="FriendView">
                                 <frame key="frameInset" minY="108" width="375" height="502"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V2J-zl-b2Y">
-                                        <frame key="frameInset" minX="8" minY="8" width="359" height="274"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04y-6l-nZy">
-                                        <frame key="frameInset" minX="251" minY="359" width="100" height="100"/>
+                                        <frame key="frameInset" minX="114" minY="440" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Gift-100"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mq6-3v-e5i">
-                                        <frame key="frameInset" minX="23" minY="359" width="100" height="100"/>
+                                        <frame key="frameInset" minX="23" minY="440" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Chat-100"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메시지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDl-vF-rqn">
-                                        <frame key="frameInset" minX="8" minY="290" width="359" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메시지를 아직 입력하지 않았습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDl-vF-rqn">
+                                        <frame key="frameInset" minX="8" minY="332" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메시지를 아직 입력하지 않았습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-NW-tMc">
+                                        <frame key="frameInset" minX="8" minY="280" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메시지를 아직 입력하지 않았습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGE-ss-Ra7">
+                                        <frame key="frameInset" minX="8" minY="384" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwe-0z-SH0">
+                                        <frame key="frameInset" minX="8" minY="8" width="359" height="213"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RpL-ry-iTY">
+                                                <frame key="frameInset" minX="8" minY="26" width="161" height="161"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-0E-CsT" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                        <frame key="frameInset" minX="1" minY="1" width="159" height="159"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mda-6A-FBt" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                <frame key="frameInset" minX="10" minY="11" width="138" height="138"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIh-Lz-V0z" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                        <frame key="frameInset" minX="13" minY="12" width="113" height="113"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4TP-It-zFk" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                                <frame key="frameInset" minX="13" minY="13" width="87" height="87"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCs-mG-hgN" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                                        <frame key="frameInset" minX="11" minY="11" width="65" height="65"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <subviews>
+                                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6x-Wt-SV4" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                                                <frame key="frameInset" minX="9" minY="10" width="46" height="46"/>
+                                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                            </view>
+                                                                                        </subviews>
+                                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4K7-jD-Q3E">
+                                                <frame key="frameInset" minX="190" minY="26" width="161" height="161"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmI-FQ-x53" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                        <frame key="frameInset" minX="1" minY="1" width="159" height="159"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmi-AI-YNS" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                <frame key="frameInset" minX="10" minY="11" width="138" height="138"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-8z-uqN" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                        <frame key="frameInset" minX="13" minY="12" width="113" height="113"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GZK-wY-LbV" customClass="CircleGraphView" customModule="Tiat" customModuleProvider="target">
+                                                                                <frame key="frameInset" minX="24" minY="24" width="65" height="65"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mm-vZ-CbG">
+                                        <frame key="frameInset" minX="196" minY="464" width="79" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-U2-FVn">
+                                        <frame key="frameInset" minX="294" minY="464" width="73" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1272,10 +1326,31 @@
                     <navigationItem key="navigationItem" title="Title" id="Ik8-DB-z2C"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="angerCircleGraphView" destination="4TP-It-zFk" id="vRY-41-e1H"/>
+                        <outlet property="circleGraphView1" destination="RpL-ry-iTY" id="94D-7x-m9D"/>
+                        <outlet property="circleGraphView2" destination="4K7-jD-Q3E" id="pUP-Ux-g45"/>
+                        <outlet property="conditionLabel" destination="6mm-vZ-CbG" id="1Pw-He-qw3"/>
+                        <outlet property="diseaseCircleGraphView" destination="Cce-8z-uqN" id="2ki-u2-o8n"/>
+                        <outlet property="excerciseCircleGraphView" destination="Gmi-AI-YNS" id="L3B-Hf-3BF"/>
+                        <outlet property="happyCircleGraphView" destination="pcg-0E-CsT" id="b3m-l9-09l"/>
+                        <outlet property="healthConditonLabel" destination="xeC-U2-FVn" id="7MH-d9-40J"/>
+                        <outlet property="healthStatusLabel" destination="rGE-ss-Ra7" id="D4m-zB-Re1"/>
+                        <outlet property="hurtCIrcleGraphView" destination="GZK-wY-LbV" id="gp6-Q0-sin"/>
+                        <outlet property="informationView" destination="fwe-0z-SH0" id="LyZ-S9-N4t"/>
+                        <outlet property="lonleyCircleGraphView" destination="gIh-Lz-V0z" id="zvR-GZ-RfO"/>
+                        <outlet property="loveCircleGraphView" destination="zCs-mG-hgN" id="GnX-bt-aLY"/>
+                        <outlet property="problemLabel" destination="hGe-NW-tMc" id="Ydl-zI-KLi"/>
+                        <outlet property="sadCircleGraphView" destination="mda-6A-FBt" id="GqV-p9-2if"/>
+                        <outlet property="sleepCircleGraphVIew" destination="tmI-FQ-x53" id="ZiY-iz-TTp"/>
+                        <outlet property="statusLabel" destination="xDl-vF-rqn" id="ek2-qT-WxL"/>
+                        <outlet property="topBar" destination="Ik8-DB-z2C" id="Xe5-qA-52u"/>
+                        <outlet property="unrestCircleGraphView" destination="i6x-Wt-SV4" id="CGL-xQ-SyG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncy-Ic-UeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312.5" y="519.5"/>
+            <point key="canvasLocation" x="2307.5" y="529.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1385,54 +1460,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-rW-m14" userLabel="Email Field">
-                                <frame key="frameInset" minX="20" minY="165" width="335" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0T9-10-aod">
+                                <frame key="frameInset" minX="20" minY="381" width="335" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
-                                <connections>
-                                    <action selector="emailNextKeyPressed:" destination="rfB-NY-2hX" eventType="primaryActionTriggered" id="MPG-4N-tdU"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0T9-10-aod">
-                                <frame key="frameInset" minX="20" minY="225" width="335" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="passwordNextKeyPressed:" destination="rfB-NY-2hX" eventType="primaryActionTriggered" id="b8O-yo-Um0"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7RS-wY-r7p">
-                                <frame key="frameInset" minX="20" minY="285" width="335" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
+                                <frame key="frameInset" minX="152" minY="87" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
-                            </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GoL-7O-Blc">
-                                <frame key="frameInset" minX="20" minY="357" width="335" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="남"/>
-                                    <segment title="여"/>
-                                    <segment title="기타"/>
-                                </segments>
-                                <connections>
-                                    <action selector="selectedValueChanged:" destination="rfB-NY-2hX" eventType="valueChanged" id="zbl-ah-DRX"/>
-                                </connections>
-                            </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="생년월일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Reu-S7-b6P">
-                                <frame key="frameInset" minX="20" minY="411" width="335" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gwm-AQ-FaV">
-                                <frame key="frameInset" minX="20" minY="86" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="gwm-AQ-FaV" secondAttribute="height" multiplier="1:1" id="HuF-jy-Zcf"/>
-                                    <constraint firstAttribute="width" constant="70" id="Mdb-if-u80"/>
-                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ep0-kv-jk9">
                                 <frame key="frameInset" minX="151" minY="520" width="72" height="30"/>
@@ -1451,50 +1490,68 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-Z9-h5B">
-                                <frame key="frameInset" minX="122" minY="127" width="66" height="30"/>
+                                <frame key="frameInset" minX="151" minY="165" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="사진선택"/>
                                 <connections>
                                     <action selector="selectProfilePhoto:" destination="rfB-NY-2hX" eventType="touchUpInside" id="Xs1-1R-pU5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6i-4B-Pnz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6i-4B-Pnz">
+                                <frame key="frameInset" minX="134" minY="29.5" width="106" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d34-cT-T0a">
+                                <frame key="frameInset" minX="218" minY="128" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-VQ-luV">
+                                <frame key="frameInset" minX="115" minY="224" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <connections>
                                     <action selector="nextKeyPressed:" destination="rfB-NY-2hX" eventType="primaryActionTriggered" id="aUb-6e-LeJ"/>
                                 </connections>
                             </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enI-Qa-zBP">
+                                <frame key="frameInset" minX="115" minY="262" width="145" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HSN-3m-eSF">
+                                <frame key="frameInset" minX="20" minY="333" width="335" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-6q-uoE">
+                                <frame key="frameInset" minX="20" minY="410" width="335" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-rW-m14" userLabel="Email Field">
+                                <frame key="frameInset" minX="20" minY="302" width="335" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="emailNextKeyPressed:" destination="rfB-NY-2hX" eventType="primaryActionTriggered" id="MPG-4N-tdU"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="k6i-4B-Pnz" firstAttribute="centerX" secondItem="dE5-bI-BBT" secondAttribute="centerX" id="8bw-7k-kps"/>
-                            <constraint firstItem="gwm-AQ-FaV" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" id="D4c-0B-A6n"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="k6i-4B-Pnz" secondAttribute="trailing" constant="119" id="JeO-xK-sbD"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="SN4-VQ-luV" secondAttribute="bottom" constant="551" id="SEm-Je-CCD"/>
-                            <constraint firstItem="97q-XR-14L" firstAttribute="top" secondItem="k6i-4B-Pnz" secondAttribute="bottom" multiplier="30:2.4" id="ahL-01-iaT"/>
-                            <constraint firstItem="SN4-VQ-luV" firstAttribute="centerX" secondItem="dE5-bI-BBT" secondAttribute="centerX" id="fAv-fv-9zv"/>
-                            <constraint firstItem="SN4-VQ-luV" firstAttribute="leading" secondItem="gwm-AQ-FaV" secondAttribute="trailing" constant="26" id="pXP-1e-4gP"/>
-                            <constraint firstItem="k6i-4B-Pnz" firstAttribute="leading" secondItem="dE5-bI-BBT" secondAttribute="leadingMargin" constant="118" id="xoh-p5-qWo"/>
-                            <constraint firstItem="gwm-AQ-FaV" firstAttribute="top" secondItem="4jz-NC-SGc" secondAttribute="bottom" multiplier="30: 7" id="z6O-k5-292"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="om9-P2-uFn"/>
                     <connections>
-                        <outlet property="birthDayField" destination="Reu-S7-b6P" id="s18-sg-zg1"/>
                         <outlet property="emailField" destination="RbJ-rW-m14" id="Uui-rJ-e2O"/>
-                        <outlet property="genderControl" destination="GoL-7O-Blc" id="i7t-jB-47c"/>
                         <outlet property="nameField" destination="SN4-VQ-luV" id="d9Z-gE-Spu"/>
-                        <outlet property="passwordCheckField" destination="7RS-wY-r7p" id="en8-YB-gmG"/>
                         <outlet property="passwordField" destination="0T9-10-aod" id="u8c-Fx-qog"/>
                         <outlet property="profileImageView" destination="gwm-AQ-FaV" id="odp-JV-ale"/>
                         <outlet property="registerButton" destination="Ep0-kv-jk9" id="1GY-wH-USJ"/>
-                        <segue destination="49e-Tb-3d3" kind="modal" identifier="toMainScreen_2" id="086-PN-ffH"/>
+                        <segue destination="RX9-4s-cT7" kind="modal" identifier="toMainScreen_2" id="ehO-OL-ya3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3A0-LM-wij" userLabel="First Responder" sceneMemberID="firstResponder"/>
