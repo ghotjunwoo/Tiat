@@ -968,7 +968,7 @@
             </objects>
             <point key="canvasLocation" x="2798.5" y="-316.5"/>
         </scene>
-        <!--채팅-->
+        <!--View Controller-->
         <scene sceneID="5aS-Sw-z93">
             <objects>
                 <viewController id="5Uf-CT-jGe" sceneMemberID="viewController">
@@ -981,11 +981,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="채팅" id="240-5C-qZV"/>
+                    <navigationItem key="navigationItem" id="GZB-2a-8eB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQH-vc-fPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-432" y="890"/>
+            <point key="canvasLocation" x="-558" y="890"/>
         </scene>
         <!--Public Album View Controller-->
         <scene sceneID="hvJ-eG-wNw">
@@ -1054,7 +1054,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnL-fd-LbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473.5" y="889.5"/>
+            <point key="canvasLocation" x="1060.5" y="889.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="fUu-y5-o0X">
@@ -1103,7 +1103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9D-mF-PEz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873.5" y="889.5"/>
+            <point key="canvasLocation" x="1460.5" y="889.5"/>
         </scene>
         <!--친구 목록-->
         <scene sceneID="wg7-f3-ORb">
@@ -1167,7 +1167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834.5" y="529.5"/>
+            <point key="canvasLocation" x="2421.5" y="529.5"/>
         </scene>
         <!--Title-->
         <scene sceneID="Ile-Pz-QMa">
@@ -1350,7 +1350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncy-Ic-UeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307.5" y="529.5"/>
+            <point key="canvasLocation" x="2894.5" y="529.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1366,7 +1366,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="chq-C9-8IY" kind="relationship" relationship="viewControllers" id="B9f-BY-cf3"/>
-                        <segue destination="5Uf-CT-jGe" kind="relationship" relationship="viewControllers" id="7YW-Lv-hLP"/>
+                        <segue destination="lNU-yM-ooO" kind="relationship" relationship="viewControllers" id="7YW-Lv-hLP"/>
                         <segue destination="rPL-rS-SBz" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
@@ -1403,20 +1403,30 @@
                                     <segue destination="rfB-NY-2hX" kind="modal" id="51i-X6-otj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-aJ-HV7">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-aJ-HV7">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <action selector="NextField:" destination="RX9-4s-cT7" eventType="primaryActionTriggered" id="w4y-ZA-lsP"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gis-TO-Fyg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gis-TO-Fyg">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="go" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="GoPressed:" destination="RX9-4s-cT7" eventType="primaryActionTriggered" id="7cm-0F-mWT"/>
                                 </connections>
                             </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lr3-Hj-jML">
+                                <frame key="frameInset" minX="80" minY="251" width="215" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvo-Gc-Udq">
+                                <frame key="frameInset" minX="80" minY="328" width="215" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.17802868150000001" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1575,7 +1585,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxT-ck-I3D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311.5" y="519.5"/>
+            <point key="canvasLocation" x="1926.5" y="520.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0eQ-nF-8Kw">
@@ -1616,7 +1626,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdd-Fe-TAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22.5" y="889.5"/>
+            <point key="canvasLocation" x="609.5" y="889.5"/>
+        </scene>
+        <!--채팅-->
+        <scene sceneID="n4D-T5-dXO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lNU-yM-ooO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="채팅" id="240-5C-qZV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n8D-HG-wHv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Uf-CT-jGe" kind="relationship" relationship="rootViewController" id="r7n-rb-Fbl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Fl-dR-3tn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1099" y="897"/>
         </scene>
     </scenes>
     <resources>
@@ -1632,7 +1661,7 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UUQ-TV-o7X"/>
+        <segue reference="LdC-cF-Kyk"/>
         <segue reference="EY5-xR-6Lf"/>
     </inferredMetricsTieBreakers>
 </document>

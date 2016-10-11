@@ -99,7 +99,13 @@ class FirstViewController: UIViewController {
             hurtCircleGraph.arcColor = UIColor.purple
         }
 
-        
+        FIRMessaging.messaging().connect { (error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                print("Sucess Messaging")
+            }
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         if let user = FIRAuth.auth()?.currentUser {
@@ -110,6 +116,8 @@ class FirstViewController: UIViewController {
                 if snap.value is NSNull {} else {
                     if snap.value as! Bool == true {
                         self.conditionLabel.text = "방해금지"
+                    } else {
+                        
                     }
                     feelingRef.child("conditions/needsattention").observe(.value) { (snap: FIRDataSnapshot) in
                         if snap.value as! Bool == true {
