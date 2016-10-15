@@ -16,6 +16,7 @@ import FirebaseMessaging
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var appToken: String?
     var window: UIWindow?
     override init() {
         FIRApp.configure()
@@ -64,10 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func tokenRefreshNotification(notification: NSNotification) {
         if let refreshedToken = FIRInstanceID.instanceID().token() {
             print("InstanceID token: \(refreshedToken)")
+            appToken = refreshedToken
         }
-        
-        // Connect to FCM since connection may have failed when attempted before having a token.
-        connectToFcm()
+            connectToFcm()
     }
     // [END refresh_token]
     
@@ -80,6 +80,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Connected to FCM.")
             }
         }
+    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("!!!!!!!!!" + deviceToken.description)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("sd" + error.localizedDescription)
     }
     // [END connect_to_fcm]
     

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class FriendDetailViewController: UIViewController {
 
     var friendUid = String()
@@ -32,6 +33,10 @@ class FriendDetailViewController: UIViewController {
     @IBOutlet weak var healthStatusLabel: UILabel!
     @IBOutlet weak var problemLabel: UILabel!
     @IBOutlet var topBar: UINavigationItem!
+    
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sadCircleGraphView.arcColor = UIColor.blue

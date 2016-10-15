@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class HealthInputViewController: UIViewController {
+class HealthInputViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var sleepLabel: UILabel!
     @IBOutlet var excerciseValueLabel: UILabel!
@@ -71,6 +71,7 @@ class HealthInputViewController: UIViewController {
         healthRef.child("disease").setValue(Int(diseaseValueLabel.text!))
         healthRef.child("hurt").setValue(Int(hurtValueLabel.text!))
         healthRef.child("detail").setValue(healthDetailField.text!)
+        
         performSegue(withIdentifier: "toMeScreen", sender: self)
     }
     
